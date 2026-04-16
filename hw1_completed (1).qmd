@@ -1,7 +1,7 @@
 ---
 title: "A/B Testing a Call to Action"
 subtitle: "Simulating Key Ideas from Classical Frequentist Statistics"
-author: "Your Name"
+author: "Kristin Yang"
 date: today
 format:
   html:
@@ -16,7 +16,10 @@ execute:
   message: false
 ---
 
-```{r setup, echo=false}
+```{r}
+#| label: setup
+#| echo: false
+
 .libPaths(c("~/R/library", .libPaths()))
 library(ggplot2)
 library(dplyr)
@@ -73,6 +76,8 @@ $$\pi_A = 0.22, \quad \pi_B = 0.18, \quad \text{so } \theta = 0.04$$
 CTA A is genuinely 4 percentage points better. The question is: can our statistical tools detect that signal?
 
 ```{r simulate-data}
+#| label: simulate-data
+
 set.seed(42)
 
 pi_A <- 0.22
@@ -98,6 +103,9 @@ The **Law of Large Numbers (LLN)** says that as you collect more data, the sampl
 We can watch this convergence happen in real time. For each visitor $k = 1, 2, \ldots, 1000$, we compute the running average of the pairwise differences up through observation $k$.
 
 ```{r lln-plot, echo=true}
+#| label: lln-plot
+#| echo: true
+
 diffs      <- draws_A - draws_B
 cumulative <- cumsum(diffs) / seq_along(diffs)
 
@@ -131,6 +139,9 @@ Knowing that our estimator converges is reassuring, but we also need to know *ho
 One elegant way to estimate that uncertainty is **bootstrapping**. The idea: treat your observed data as a stand-in for the population, and simulate collecting a new dataset by resampling *with replacement* from what you already have. Do this thousands of times, compute $\hat\theta$ each time, and the spread of those resampled estimates tells you how variable your original estimate is.
 
 ```{r bootstrap, echo=true}
+#| label: bootstrap
+#| echo: true
+
 B           <- 1000
 boot_thetas <- numeric(B)
 
@@ -155,9 +166,12 @@ ci_hi <- theta_hat + 1.96 * boot_se
 ```
 
 ```{r se-table, echo=false}
+#| label: se-table
+#| echo: false
+
 se_df <- data.frame(
-  Method        = c("Bootstrap", "Analytical"),
-  `Std. Error`  = c(round(boot_se, 5), round(analytic_se, 5))
+  Method       = c("Bootstrap", "Analytical"),
+  `Std. Error` = c(round(boot_se, 5), round(analytic_se, 5))
 )
 knitr::kable(se_df, caption = "Standard Error Comparison", align = "lr")
 ```
@@ -181,6 +195,11 @@ The CLT says: no matter what distribution the underlying data come from, the sam
 We can watch this happen by simulating the experiment at four different sample sizes.
 
 ```{r clt-plot, echo=true, fig.width=9, fig.height=7}
+#| label: clt-plot
+#| echo: true
+#| fig-width: 9
+#| fig-height: 7
+
 sample_sizes <- c(25, 50, 100, 500)
 reps         <- 1000
 
@@ -188,19 +207,33 @@ clt_list <- lapply(sample_sizes, function(s) {
   thetas <- replicate(reps, {
     mean(rbinom(s, 1, pi_A)) - mean(rbinom(s, 1, pi_B))
   })
-  data.frame(n = s, theta_hat = thetas,
-             n_label = paste0("n = ", s))
+  data.frame(
+    n = s,
+    theta_hat = thetas,
+    n_label = paste0("n = ", s)
+  )
 })
+
 clt_data <- do.call(rbind, clt_list)
-clt_data$n_label <- factor(clt_data$n_label,
-                            levels = paste0("n = ", sample_sizes))
+clt_data$n_label <- factor(
+  clt_data$n_label,
+  levels = paste0("n = ", sample_sizes)
+)
 
 ggplot(clt_data, aes(x = theta_hat)) +
-  geom_histogram(aes(y = after_stat(density)),
-                 bins = 35, fill = "#6366F1",
-                 color = "white", alpha = 0.85) +
-  geom_vline(xintercept = 0.04, color = "#EF4444",
-             linetype = "dashed", linewidth = 0.8) +
+  geom_histogram(
+    aes(y = after_stat(density)),
+    bins = 35,
+    fill = "#6366F1",
+    color = "white",
+    alpha = 0.85
+  ) +
+  geom_vline(
+    xintercept = 0.04,
+    color = "#EF4444",
+    linetype = "dashed",
+    linewidth = 0.8
+  ) +
   facet_wrap(~n_label, scales = "free_y") +
   labs(
     title    = "Central Limit Theorem: Sampling Distribution of θ̂",
@@ -235,15 +268,25 @@ The logic: under $H_0$, $\hat\theta \approx N(0, SE^2)$, so $z \approx N(0,1)$. 
 > **A note on t-tests vs. z-tests:** This is often called a "t-test," but our data are Bernoulli, not Normal — so there's no exact t-distribution result. We rely on the CLT for approximate Normality. For $n = 1000$, the t and Normal distributions are essentially identical, so the distinction is largely academic — but worth understanding.
 
 ```{r hypothesis-test, echo=true}
+#| label: hypothesis-test
+#| echo: true
+
 z_stat  <- theta_hat / analytic_se
 p_value <- 2 * (1 - pnorm(abs(z_stat)))
 ```
 
 ```{r hyp-table, echo=false}
+#| label: hyp-table
+#| echo: false
+
 hyp_df <- data.frame(
   Statistic = c("Estimated θ", "Standard Error", "z-statistic", "p-value"),
-  Value     = c(round(theta_hat, 4), round(analytic_se, 4),
-                round(z_stat, 3), formatC(p_value, format = "g", digits = 3))
+  Value     = c(
+    round(theta_hat, 4),
+    round(analytic_se, 4),
+    round(z_stat, 3),
+    formatC(p_value, format = "g", digits = 3)
+  )
 )
 knitr::kable(hyp_df, caption = "Hypothesis Test Results (H₀: θ = 0)", align = "lr")
 ```
@@ -267,6 +310,9 @@ The coefficients have clean interpretations:
 So $\hat\beta_1$ is numerically identical to our earlier $\hat\theta$.
 
 ```{r regression, echo=true}
+#| label: regression
+#| echo: true
+
 reg_data <- data.frame(
   Y = c(draws_A, draws_B),
   D = c(rep(1, n), rep(0, n))
@@ -276,6 +322,9 @@ fit <- lm(Y ~ D, data = reg_data)
 ```
 
 ```{r reg-table, echo=false}
+#| label: reg-table
+#| echo: false
+
 reg_df <- tidy(fit) |>
   filter(term == "D") |>
   transmute(
@@ -285,6 +334,7 @@ reg_df <- tidy(fit) |>
     `t-statistic` = round(statistic, 3),
     `p-value`     = formatC(p.value, format = "g", digits = 3)
   )
+
 knitr::kable(reg_df, caption = "Regression: Y ~ D", align = "lrrrr")
 ```
 
@@ -305,6 +355,9 @@ A single test at $\alpha = 0.05$ has a 5% false positive rate: even when $H_0$ i
 Let's measure exactly how much higher. We simulate a world where **there is no true difference**: $\pi_A = \pi_B = 0.20$.
 
 ```{r peeking-sim, echo=true}
+#| label: peeking-sim
+#| echo: true
+
 set.seed(123)
 n_sims  <- 10000
 peek_ns <- seq(100, 1000, by = 100)
@@ -316,8 +369,10 @@ false_positives <- replicate(n_sims, {
 
   any(sapply(peek_ns, function(k) {
     th <- mean(A[1:k]) - mean(B[1:k])
-    se <- sqrt(mean(A[1:k]) * (1 - mean(A[1:k])) / k +
-               mean(B[1:k]) * (1 - mean(B[1:k])) / k)
+    se <- sqrt(
+      mean(A[1:k]) * (1 - mean(A[1:k])) / k +
+      mean(B[1:k]) * (1 - mean(B[1:k])) / k
+    )
     if (se == 0) return(FALSE)
     2 * (1 - pnorm(abs(th / se))) < 0.05
   }))
@@ -327,12 +382,19 @@ empirical_fpr <- mean(false_positives)
 ```
 
 ```{r peeking-table, echo=false}
+#| label: peeking-table
+#| echo: false
+
 peek_df <- data.frame(
   Scenario              = c("Single test (α = 0.05)", "Peeking 10 times"),
   `False Positive Rate` = c("5.0%", paste0(round(empirical_fpr * 100, 1), "%"))
 )
-knitr::kable(peek_df, caption = "The Cost of Peeking (H₀ true: πA = πB = 0.20)",
-             align = "lr")
+
+knitr::kable(
+  peek_df,
+  caption = "The Cost of Peeking (H₀ true: πA = πB = 0.20)",
+  align = "lr"
+)
 ```
 
 When there is genuinely no difference between the two CTAs, peeking 10 times inflates the false positive rate from 5% to roughly **`r round(empirical_fpr * 100, 0)`%**. In other words, you'd declare a winner in about one out of every three experiments — even when neither CTA is better.
