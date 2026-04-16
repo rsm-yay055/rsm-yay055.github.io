@@ -1,0 +1,13 @@
+---
+title: "Kristin Yang"
+image: "7b2796145074b6e18805d99505e2d994.jpg"
+about:
+  template: jolla
+  links:
+    - icon: envelope
+      href: mailto:yay055@ucsd.edu
+    - icon: linkedin
+      href: https://www.linkedin.com/in/kristin-yang-2513b9262/
+---
+
+Welcome to my website!

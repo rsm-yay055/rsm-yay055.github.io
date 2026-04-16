@@ -1,0 +1,68 @@
+---
+title: "Black Friday Analysis"
+author: "Kristin Yang"
+date: "2025-04-15"
+image: "cover.png"
+---
+
+##  Project Overview
+
+This project analyzes customer purchase behavior during Black Friday using transaction data. The goal is to understand how different demographic factors influence spending patterns.
+
+---
+
+##  Key Questions
+
+- Which age group spends the most?
+- How does occupation affect purchasing behavior?
+- Do different age groups prefer different products?
+
+---
+
+##  Data & Methods
+
+- Data cleaning using Python (pandas)
+- Exploratory Data Analysis (EDA)
+- Visualization using matplotlib
+
+---
+
+##  Key Visualizations
+
+### Spending by Age
+
+![](age_spending.png)
+
+Customers aged **26–35** contribute the highest total spending, making them the most valuable customer segment.
+
+---
+
+### Spending by Occupation
+
+![](spending_by_occupation.png)
+
+Spending varies significantly across occupations, suggesting income level and job type influence purchasing behavior.
+
+---
+
+### Product Preferences by Age Group
+
+![](product_sales_by_age.png)
+
+Different age groups show distinct preferences for product categories, indicating opportunities for targeted marketing strategies.
+
+---
+
+##  Key Insights
+
+- The **26–35 age group** is the primary contributor to total sales
+- Consumer behavior varies significantly by **occupation**
+- Product preferences differ across **age segments**
+
+---
+
+## 📎 Full Project
+
+For full analysis and code, please download the notebook:
+
+[Download Notebook](../../files/BlackFriday-checkpoint.ipynb)
