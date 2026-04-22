@@ -33,6 +33,8 @@ The comparison of baseline characteristics between the treatment and control gro
 df.groupby('treatment')[['years', 'freq']].mean().round(2)
 ```
 
+![](image%20copy.png)
+
 ### Effect of Treatment on Giving (Table 2A)
 
 The regression results show that the treatment variable has a positive and statistically significant effect on donation behavior. The coefficient on treatment is 0.0042, indicating that individuals in the treatment group are approximately 0.42 percentage points more likely to donate compared to those in the control group. This effect is statistically significant (p < 0.01), suggesting that matching donations increase the likelihood of giving.
@@ -42,6 +44,8 @@ The regression results show that the treatment variable has a positive and stati
 model = smf.ols('gave ~ treatment', data=df).fit()
 model.summary()
 ```
+
+![](preview.png)
 
 ### Regression with Controls (Table 3)
 
@@ -53,6 +57,7 @@ model2 = smf.ols('gave ~ treatment + years + freq', data=df).fit()
 model2.summary()
 ```
 
+![](image.png)
 
 ## Something Additional
 
