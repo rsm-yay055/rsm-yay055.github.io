@@ -3,7 +3,7 @@ title: "Replication of Karlan and List (2007)"
 subtitle: "Does Price Matter in Charitable Giving?"
 author: "Kristin Yang"
 date: today
-image: preview.png
+image: images/preview.png
 execute:
   enabled: false
 ---
