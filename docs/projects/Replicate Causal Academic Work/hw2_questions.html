@@ -214,7 +214,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="balance-check-table-1" class="level3">
 <h3 class="anchored" data-anchor-id="balance-check-table-1">Balance Check (Table 1)</h3>
 <p>The comparison of baseline characteristics between the treatment and control groups shows that they are very similar. For example, the average number of prior donation years is approximately 6.14 for the control group and 6.08 for the treatment group. This suggests that randomization was successful and there is no evidence of selection bias.</p>
-<div id="d2da44d3" class="cell">
+<div id="669a6555" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>df.groupby(<span class="st">'treatment'</span>)[[<span class="st">'years'</span>, <span class="st">'freq'</span>]].mean().<span class="bu">round</span>(<span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><img src="image copy.png" class="img-fluid"></p>
@@ -222,7 +222,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="effect-of-treatment-on-giving-table-2a" class="level3">
 <h3 class="anchored" data-anchor-id="effect-of-treatment-on-giving-table-2a">Effect of Treatment on Giving (Table 2A)</h3>
 <p>The regression results show that the treatment variable has a positive and statistically significant effect on donation behavior. The coefficient on treatment is 0.0042, indicating that individuals in the treatment group are approximately 0.42 percentage points more likely to donate compared to those in the control group. This effect is statistically significant (p &lt; 0.01), suggesting that matching donations increase the likelihood of giving.</p>
-<div id="692c010d" class="cell">
+<div id="82766ade" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> smf.ols(<span class="st">'gave ~ treatment'</span>, data<span class="op">=</span>df).fit()</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>model.summary()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -231,7 +231,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="regression-with-controls-table-3" class="level3">
 <h3 class="anchored" data-anchor-id="regression-with-controls-table-3">Regression with Controls (Table 3)</h3>
 <p>After including control variables such as prior donation history (years) and donation frequency (freq), the estimated treatment effect remains positive and statistically significant. The coefficient on treatment is 0.0041, which is very similar to the baseline estimate. This suggests that the treatment effect is robust and not driven by pre-existing differences between individuals.</p>
-<div id="1e55a750" class="cell">
+<div id="117eb523" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>model2 <span class="op">=</span> smf.ols(<span class="st">'gave ~ treatment + years + freq'</span>, data<span class="op">=</span>df).fit()</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>model2.summary()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
