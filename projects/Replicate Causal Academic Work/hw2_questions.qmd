@@ -28,12 +28,13 @@ Because the assignment to treatment and control groups is random, any difference
 ### Balance Check (Table 1)
 
 The comparison of baseline characteristics between the treatment and control groups shows that they are very similar. For example, the average number of prior donation years is approximately 6.14 for the control group and 6.08 for the treatment group. This suggests that randomization was successful and there is no evidence of selection bias.
+
 ```{python}
 #| echo: true
 df.groupby('treatment')[['years', 'freq']].mean().round(2)
 ```
 
-![](balance.png)
+![](images/balance.png)
 
 ### Effect of Treatment on Giving (Table 2A)
 
@@ -45,7 +46,7 @@ model = smf.ols('gave ~ treatment', data=df).fit()
 model.summary()
 ```
 
-![](preview.png)
+![](images/preview.png)
 
 ### Regression with Controls (Table 3)
 
@@ -57,7 +58,7 @@ model2 = smf.ols('gave ~ treatment + years + freq', data=df).fit()
 model2.summary()
 ```
 
-![](image.png)
+![](images/image.png)
 
 ## Something Additional
 
