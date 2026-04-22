@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Projects – Kristin Yang</title>
+<title>Replication of Karlan and List (2007) – Kristin Yang</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,29 +20,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ac077c1e730dfeb5e42400639d17284e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5e5c0ab1790760c7bbdc1955536183c7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ac077c1e730dfeb5e42400639d17284e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-5e5c0ab1790760c7bbdc1955536183c7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,67 +103,12 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
-    };
 
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -140,7 +118,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Kristin Yang</span>
     </a>
   </div>
@@ -151,15 +129,15 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./resume.html"> 
+    <a class="nav-link" href="../../resume.html"> 
 <span class="menu-text">Resume</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./projects.html" aria-current="page"> 
+    <a class="nav-link" href="../../projects.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
 </ul>
@@ -173,15 +151,28 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#does-price-matter-in-charitable-giving" id="toc-does-price-matter-in-charitable-giving" class="nav-link active" data-scroll-target="#does-price-matter-in-charitable-giving">Does Price Matter in Charitable Giving?</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#main-analysis" id="toc-main-analysis" class="nav-link" data-scroll-target="#main-analysis">Main Analysis</a>
+  <ul class="collapse">
+  <li><a href="#balance-check-table-1" id="toc-balance-check-table-1" class="nav-link" data-scroll-target="#balance-check-table-1">Balance Check (Table 1)</a></li>
+  <li><a href="#effect-of-treatment-on-giving-table-2a" id="toc-effect-of-treatment-on-giving-table-2a" class="nav-link" data-scroll-target="#effect-of-treatment-on-giving-table-2a">Effect of Treatment on Giving (Table 2A)</a></li>
+  <li><a href="#regression-with-controls-table-3" id="toc-regression-with-controls-table-3" class="nav-link" data-scroll-target="#regression-with-controls-table-3">Regression with Controls (Table 3)</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">My Projects</h1>
+<h1 class="title">Replication of Karlan and List (2007)</h1>
 </div>
 
 
@@ -198,109 +189,355 @@ window.Quarto = {
 </header>
 
 
+<section id="does-price-matter-in-charitable-giving" class="level2">
+<h2 class="anchored" data-anchor-id="does-price-matter-in-charitable-giving">Does Price Matter in Charitable Giving?</h2>
+<p><strong>Author:</strong> Kristin Yang<br>
+<strong>Date:</strong> April 22, 2026</p>
+</section>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>This paper studies whether financial incentives, such as matching donations, can increase charitable giving. Karlan and List (2007) conduct a large-scale field experiment in which potential donors are randomly assigned to receive or not receive a matching grant offer.</p>
+<p>Because the assignment to treatment and control groups is random, any difference in donation behavior between the two groups can be interpreted as a causal effect of the matching incentive. This paper is important because it provides evidence on how nonprofits can design more effective fundraising strategies.</p>
+<div id="3c96fbd1" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.formula.api <span class="im">as</span> smf</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_stata(<span class="st">"AERtables1-5.dta"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="main-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="main-analysis">Main Analysis</h2>
+<section id="balance-check-table-1" class="level3">
+<h3 class="anchored" data-anchor-id="balance-check-table-1">Balance Check (Table 1)</h3>
+<p>The comparison of baseline characteristics between the treatment and control groups shows that they are very similar. This suggests that randomization was successful and there is no evidence of selection bias.</p>
+<div id="c030e134" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df.groupby(<span class="st">'treatment'</span>)[[<span class="st">'years'</span>, <span class="st">'freq'</span>]].mean().<span class="bu">round</span>(<span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<div>
 
 
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">years</th>
+<th data-quarto-table-cell-role="th">freq</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">treatment</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0.0</th>
+<td>6.14</td>
+<td>8.05</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1.0</th>
+<td>6.08</td>
+<td>8.04</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="effect-of-treatment-on-giving-table-2a" class="level3">
+<h3 class="anchored" data-anchor-id="effect-of-treatment-on-giving-table-2a">Effect of Treatment on Giving (Table 2A)</h3>
+<p>We estimate a simple linear regression to examine whether the treatment affects the probability of giving.</p>
+<div id="cb6d8afc" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> smf.ols(<span class="st">'gave ~ treatment'</span>, data<span class="op">=</span>df).fit()</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>model.summary()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<table class="simpletable caption-top table table-sm table-striped small">
+<caption>OLS Regression Results</caption>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Dep. Variable:</th>
+<td>gave</td>
+<th data-quarto-table-cell-role="th">R-squared:</th>
+<td>0.000</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Model:</th>
+<td>OLS</td>
+<th data-quarto-table-cell-role="th">Adj. R-squared:</th>
+<td>0.000</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Method:</th>
+<td>Least Squares</td>
+<th data-quarto-table-cell-role="th">F-statistic:</th>
+<td>9.618</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Date:</th>
+<td>Wed, 22 Apr 2026</td>
+<th data-quarto-table-cell-role="th">Prob (F-statistic):</th>
+<td>0.00193</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Time:</th>
+<td>07:36:59</td>
+<th data-quarto-table-cell-role="th">Log-Likelihood:</th>
+<td>26630.</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">No. Observations:</th>
+<td>50083</td>
+<th data-quarto-table-cell-role="th">AIC:</th>
+<td>-5.326e+04</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Df Residuals:</th>
+<td>50081</td>
+<th data-quarto-table-cell-role="th">BIC:</th>
+<td>-5.324e+04</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Df Model:</th>
+<td>1</td>
+<th data-quarto-table-cell-role="th"></th>
+<td></td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Covariance Type:</th>
+<td>nonrobust</td>
+<th data-quarto-table-cell-role="th"></th>
+<td></td>
+</tr>
+</tbody>
+</table>
 
 
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-date-sort="1776816000000" data-listing-file-modified-sort="1776309790441" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13" data-listing-word-count-sort="2573">
-<a href="./projects/abtest/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="projects/abtest/index_files/figure-html/lln-plot-1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-A/B Testing a Call to Action
-</h5>
-<div class="card-text listing-description delink">
-Every website with a newsletter faces the same challenge: how do you convince a visitor to actually sign up? The phrasing of that little prompt — the “call to action” (CTA)…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Kristin Yang
-</div>
-<div class="listing-date">
-Apr 22, 2026
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="1" data-listing-date-sort="1744675200000" data-listing-file-modified-sort="1776304067569" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="155">
-<a href="./projects/blackfriday/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./projects/blackfriday/cover.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Black Friday Analysis
-</h5>
-<div class="card-text listing-description delink">
-This project analyzes customer purchase behavior during Black Friday using transaction data. The goal is to understand how different demographic factors influence spending…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Kristin Yang
-</div>
-<div class="listing-date">
-Apr 15, 2025
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="2" data-listing-date-sort="1744675200000" data-listing-file-modified-sort="1776305766210" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="167">
-<a href="./projects/blackfriday/airbnb/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./projects/blackfriday/airbnb/NYC.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-NYC Airbnb Market Analysis
-</h5>
-<div class="card-text listing-description delink">
-This project analyzes transportation and housing-related data to understand patterns in trip duration, service usage, and housing preferences.
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Kristin Yang
-</div>
-<div class="listing-date">
-Apr 15, 2025
+<table class="simpletable caption-top table table-sm table-striped small">
+<tbody>
+<tr class="odd">
+<td></td>
+<th data-quarto-table-cell-role="th">coef</th>
+<th data-quarto-table-cell-role="th">std err</th>
+<th data-quarto-table-cell-role="th">t</th>
+<th data-quarto-table-cell-role="th">P&gt;|t|</th>
+<th data-quarto-table-cell-role="th">[0.025</th>
+<th data-quarto-table-cell-role="th">0.975]</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Intercept</th>
+<td>0.0179</td>
+<td>0.001</td>
+<td>16.225</td>
+<td>0.000</td>
+<td>0.016</td>
+<td>0.020</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">treatment</th>
+<td>0.0042</td>
+<td>0.001</td>
+<td>3.101</td>
+<td>0.002</td>
+<td>0.002</td>
+<td>0.007</td>
+</tr>
+</tbody>
+</table>
+
+
+<table class="simpletable caption-top table table-sm table-striped small">
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Omnibus:</th>
+<td>59814.280</td>
+<th data-quarto-table-cell-role="th">Durbin-Watson:</th>
+<td>1.997</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Prob(Omnibus):</th>
+<td>0.000</td>
+<th data-quarto-table-cell-role="th">Jarque-Bera (JB):</th>
+<td>4317152.727</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Skew:</th>
+<td>6.740</td>
+<th data-quarto-table-cell-role="th">Prob(JB):</th>
+<td>0.00</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Kurtosis:</th>
+<td>46.440</td>
+<th data-quarto-table-cell-role="th">Cond. No.</th>
+<td>3.23</td>
+</tr>
+</tbody>
+</table>
+<br><br>Notes:<br>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
 </div>
 </div>
+<p>The regression results show that the treatment variable has a positive and statistically significant effect on donation behavior. The coefficient on treatment is approximately 0.0042, indicating that individuals in the treatment group are about 0.42 percentage points more likely to donate than those in the control group.</p>
+</section>
+<section id="regression-with-controls-table-3" class="level3">
+<h3 class="anchored" data-anchor-id="regression-with-controls-table-3">Regression with Controls (Table 3)</h3>
+<p>Next, we include control variables such as prior donation history and donation frequency to test the robustness of the results.</p>
+<div id="b5a9444e" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>model2 <span class="op">=</span> smf.ols(<span class="st">'gave ~ treatment + years + freq'</span>, data<span class="op">=</span>df).fit()</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>model2.summary()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<table class="simpletable caption-top table table-sm table-striped small">
+<caption>OLS Regression Results</caption>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Dep. Variable:</th>
+<td>gave</td>
+<th data-quarto-table-cell-role="th">R-squared:</th>
+<td>0.017</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Model:</th>
+<td>OLS</td>
+<th data-quarto-table-cell-role="th">Adj. R-squared:</th>
+<td>0.017</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Method:</th>
+<td>Least Squares</td>
+<th data-quarto-table-cell-role="th">F-statistic:</th>
+<td>291.7</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Date:</th>
+<td>Wed, 22 Apr 2026</td>
+<th data-quarto-table-cell-role="th">Prob (F-statistic):</th>
+<td>9.85e-188</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Time:</th>
+<td>07:36:59</td>
+<th data-quarto-table-cell-role="th">Log-Likelihood:</th>
+<td>27058.</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">No. Observations:</th>
+<td>50082</td>
+<th data-quarto-table-cell-role="th">AIC:</th>
+<td>-5.411e+04</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Df Residuals:</th>
+<td>50078</td>
+<th data-quarto-table-cell-role="th">BIC:</th>
+<td>-5.407e+04</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Df Model:</th>
+<td>3</td>
+<th data-quarto-table-cell-role="th"></th>
+<td></td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Covariance Type:</th>
+<td>nonrobust</td>
+<th data-quarto-table-cell-role="th"></th>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+
+<table class="simpletable caption-top table table-sm table-striped small">
+<tbody>
+<tr class="odd">
+<td></td>
+<th data-quarto-table-cell-role="th">coef</th>
+<th data-quarto-table-cell-role="th">std err</th>
+<th data-quarto-table-cell-role="th">t</th>
+<th data-quarto-table-cell-role="th">P&gt;|t|</th>
+<th data-quarto-table-cell-role="th">[0.025</th>
+<th data-quarto-table-cell-role="th">0.975]</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Intercept</th>
+<td>0.0147</td>
+<td>0.001</td>
+<td>11.332</td>
+<td>0.000</td>
+<td>0.012</td>
+<td>0.017</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">treatment</th>
+<td>0.0041</td>
+<td>0.001</td>
+<td>3.050</td>
+<td>0.002</td>
+<td>0.001</td>
+<td>0.007</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">years</th>
+<td>-0.0022</td>
+<td>0.000</td>
+<td>-14.941</td>
+<td>0.000</td>
+<td>-0.003</td>
+<td>-0.002</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">freq</th>
+<td>0.0021</td>
+<td>7.23e-05</td>
+<td>29.001</td>
+<td>0.000</td>
+<td>0.002</td>
+<td>0.002</td>
+</tr>
+</tbody>
+</table>
+
+
+<table class="simpletable caption-top table table-sm table-striped small">
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Omnibus:</th>
+<td>58996.565</td>
+<th data-quarto-table-cell-role="th">Durbin-Watson:</th>
+<td>1.998</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Prob(Omnibus):</th>
+<td>0.000</td>
+<th data-quarto-table-cell-role="th">Jarque-Bera (JB):</th>
+<td>4112891.825</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Skew:</th>
+<td>6.589</td>
+<th data-quarto-table-cell-role="th">Prob(JB):</th>
+<td>0.00</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Kurtosis:</th>
+<td>45.395</td>
+<th data-quarto-table-cell-role="th">Cond. No.</th>
+<td>42.2</td>
+</tr>
+</tbody>
+</table>
+<br><br>Notes:<br>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
 </div>
-</div></a>
 </div>
-<div class="g-col-1" data-index="3" data-listing-date-sort="1776816000000" data-listing-file-modified-sort="1776843908725" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="363">
-<a href="./projects/Replicate Causal Academic Work/hw2_questions.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./projects/Replicate Causal Academic Work/preview.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Replication of Karlan and List (2007)
-</h5>
-<div class="card-text listing-description delink">
-This paper studies whether financial incentives, such as matching donations, can increase charitable giving. Karlan and List (2007) conduct a large-scale field experiment in…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Kristin Yang
-</div>
-<div class="listing-date">
-Apr 22, 2026
-</div>
-</div>
-</div>
-</div></a>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+<p>After including control variables, the treatment effect remains positive and statistically significant. The magnitude is very similar to the baseline estimate, suggesting that the results are robust.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

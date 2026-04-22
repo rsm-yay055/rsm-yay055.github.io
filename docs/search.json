@@ -4,126 +4,112 @@
     "href": "projects.html",
     "title": "My Projects",
     "section": "",
-    "text": "A/B Testing a Call to Action\n\n\n\n\n\n\nKristin Yang\n\n\nApr 16, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nBlack Friday Analysis\n\n\n\n\n\n\nKristin Yang\n\n\nApr 15, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nNYC Airbnb Market Analysis\n\n\n\n\n\n\nKristin Yang\n\n\nApr 15, 2025\n\n\n\n\n\n\nNo matching items"
+    "text": "A/B Testing a Call to Action\n\n\n\n\n\n\nKristin Yang\n\n\nApr 22, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nBlack Friday Analysis\n\n\n\n\n\n\nKristin Yang\n\n\nApr 15, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nNYC Airbnb Market Analysis\n\n\n\n\n\n\nKristin Yang\n\n\nApr 15, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nReplication of Karlan and List (2007)\n\n\n\n\n\n\nKristin Yang\n\n\nApr 22, 2026\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "hw1_questions.html",
-    "href": "hw1_questions.html",
-    "title": "A/B Testing a Call to Action",
+    "objectID": "hw2_questions.html",
+    "href": "hw2_questions.html",
+    "title": "Replication of Karlan and List (2007)",
     "section": "",
-    "text": "Note\n\n\n\nWrite a short introduction for the reader that sets the scene. Cover the following points in your own words:\n\nYou have a website and your landing page includes a place where visitors can sign up to receive your newsletter.\nYou want to test which of two possible “calls to action” (CTAs) leads to more sign-ups. CTA A reads “Sign up for our newsletter here!” and CTA B reads “Stay up to date by signing up!” (you are welcome to change the language of the CTAs).\nYou will evaluate which CTA performs better by running an A/B test. Explain what an A/B test is: visitors are randomly assigned to see one of the two CTAs, and you compare sign-up rates between the two groups."
+    "text": "This paper studies whether financial incentives, such as matching donations, can increase charitable giving. Karlan and List (2007) conduct a large-scale field experiment in which potential donors are randomly assigned to receive or not receive a matching grant offer.\nBecause the assignment to treatment and control groups is random, any difference in donation behavior between the two groups can be interpreted as a causal effect of the matching incentive. This paper is important because it provides evidence on how nonprofits can design more effective fundraising strategies."
   },
   {
-    "objectID": "hw1_questions.html#introduction",
-    "href": "hw1_questions.html#introduction",
-    "title": "A/B Testing a Call to Action",
+    "objectID": "hw2_questions.html#introduction",
+    "href": "hw2_questions.html#introduction",
+    "title": "Replication of Karlan and List (2007)",
     "section": "",
-    "text": "Note\n\n\n\nWrite a short introduction for the reader that sets the scene. Cover the following points in your own words:\n\nYou have a website and your landing page includes a place where visitors can sign up to receive your newsletter.\nYou want to test which of two possible “calls to action” (CTAs) leads to more sign-ups. CTA A reads “Sign up for our newsletter here!” and CTA B reads “Stay up to date by signing up!” (you are welcome to change the language of the CTAs).\nYou will evaluate which CTA performs better by running an A/B test. Explain what an A/B test is: visitors are randomly assigned to see one of the two CTAs, and you compare sign-up rates between the two groups."
+    "text": "This paper studies whether financial incentives, such as matching donations, can increase charitable giving. Karlan and List (2007) conduct a large-scale field experiment in which potential donors are randomly assigned to receive or not receive a matching grant offer.\nBecause the assignment to treatment and control groups is random, any difference in donation behavior between the two groups can be interpreted as a causal effect of the matching incentive. This paper is important because it provides evidence on how nonprofits can design more effective fundraising strategies."
   },
   {
-    "objectID": "hw1_questions.html#the-ab-test-as-a-statistical-problem",
-    "href": "hw1_questions.html#the-ab-test-as-a-statistical-problem",
-    "title": "A/B Testing a Call to Action",
-    "section": "The A/B Test as a Statistical Problem",
-    "text": "The A/B Test as a Statistical Problem\n\n\n\n\n\n\nNote\n\n\n\nIn this section, connect the A/B test to a formal statistical framework. Address each of the following ideas:\n\nEach visitor either signs up or does not, so we can model each visitor’s outcome as a draw from a Bernoulli distribution with parameter \\(\\pi\\), the probability of signing up.\nBecause the CTA a visitor sees may influence their probability of signing up, we allow the parameter to differ across groups: visitors who see CTA A have sign-up probability \\(\\pi_A\\), and visitors who see CTA B have sign-up probability \\(\\pi_B\\). Each visitor can either sign up (1) or not (0).\nThe quantity we care about is \\(\\theta = \\pi_A - \\pi_B\\), the difference in sign-up rates between the two CTAs.\nOur estimator of \\(\\theta\\) is the difference in sample means, \\(\\hat\\theta = \\bar{X}_A - \\bar{X}_B\\). (Since each observation is either 0 or 1, the sample mean is simply the proportion of visitors who signed up — so \\(\\bar{X}_A = \\hat\\pi_A\\) and \\(\\bar{X}_B = \\hat\\pi_B\\).)"
+    "objectID": "hw2_questions.html#main-analysis",
+    "href": "hw2_questions.html#main-analysis",
+    "title": "Replication of Karlan and List (2007)",
+    "section": "Main Analysis",
+    "text": "Main Analysis\n\nBalance Check (Table 1)\nThe comparison of baseline characteristics between the treatment and control groups shows that they are very similar. For example, the average number of prior donation years is approximately 6.14 for the control group and 6.08 for the treatment group. This suggests that randomization was successful and there is no evidence of selection bias.\n\ndf.groupby('treatment')[['years', 'freq']].mean().round(2)\n\n\n\nEffect of Treatment on Giving (Table 2A)\nThe regression results show that the treatment variable has a positive and statistically significant effect on donation behavior. The coefficient on treatment is 0.0042, indicating that individuals in the treatment group are approximately 0.42 percentage points more likely to donate compared to those in the control group. This effect is statistically significant (p &lt; 0.01), suggesting that matching donations increase the likelihood of giving.\n\nmodel = smf.ols('gave ~ treatment', data=df).fit()\nmodel.summary()\n\n\n\nRegression with Controls (Table 3)\nAfter including control variables such as prior donation history (years) and donation frequency (freq), the estimated treatment effect remains positive and statistically significant. The coefficient on treatment is 0.0041, which is very similar to the baseline estimate. This suggests that the treatment effect is robust and not driven by pre-existing differences between individuals.\n\nmodel2 = smf.ols('gave ~ treatment + years + freq', data=df).fit()\nmodel2.summary()"
   },
   {
-    "objectID": "hw1_questions.html#simulating-data",
-    "href": "hw1_questions.html#simulating-data",
-    "title": "A/B Testing a Call to Action",
-    "section": "Simulating Data",
-    "text": "Simulating Data\n\n\n\n\n\n\nNote\n\n\n\n\nWrite a brief paragraph for the reader explaining that in the real world we would not know the true values of \\(\\pi_A\\) and \\(\\pi_B\\), but for the purpose of this exercise we will set them ourselves so that we can study the behavior of our estimator when we know the truth.\nSuppose \\(\\pi_A = 0.22\\) and \\(\\pi_B = 0.18\\), so the true difference is \\(\\theta = 0.04\\).\nUsing a language of your choice, simulate 1,000 draws from each of the two Bernoulli distributions (2,000 total). Store the results so you can use them in the sections that follow."
+    "objectID": "hw2_questions.html#something-additional",
+    "href": "hw2_questions.html#something-additional",
+    "title": "Replication of Karlan and List (2007)",
+    "section": "Something Additional",
+    "text": "Something Additional\n\nAdditional Analysis\nThe magnitude of the treatment effect is relatively small. While the matching incentive increases the probability of donating, the overall effect size is modest. This suggests that although matching grants are effective, they may not lead to large changes in donor behavior. This highlights the importance of considering both statistical significance and economic significance when evaluating policy interventions."
   },
   {
-    "objectID": "hw1_questions.html#the-law-of-large-numbers",
-    "href": "hw1_questions.html#the-law-of-large-numbers",
-    "title": "A/B Testing a Call to Action",
-    "section": "The Law of Large Numbers",
-    "text": "The Law of Large Numbers\n\n\n\n\n\n\nNote\n\n\n\n\nWrite an introductory sentence or two explaining the Law of Large Numbers to the reader: as the sample size grows, the sample mean converges to the population mean. Connect this back to our estimator — the LLN is what gives us confidence that \\(\\hat\\theta = \\bar{X}_A - \\bar{X}_B\\) will be close to the true \\(\\theta\\) when our sample is large enough.\nThen demonstrate this visually. Using the simulated data from the previous section, compute the element-wise differences between the CTA A draws and the CTA B draws to get a vector of 1,000 differences. Calculate the cumulative average of that vector (i.e., the running mean after 1 draw, after 2 draws, …, after 1,000 draws) and plot it against the number of observations.\nThe plot should show a noisy average when only a few observations are included that settles down and converges toward the true difference of 0.04 as the sample size grows.\nAfter the plot, write a few sentences explaining what the reader should take away from it."
-  },
-  {
-    "objectID": "hw1_questions.html#bootstrap-standard-errors",
-    "href": "hw1_questions.html#bootstrap-standard-errors",
-    "title": "A/B Testing a Call to Action",
-    "section": "Bootstrap Standard Errors",
-    "text": "Bootstrap Standard Errors\n\n\n\n\n\n\nNote\n\n\n\n\nNow that we “trust” our estimator, the next natural question is: how precise is it? We would like to report not just a point estimate of \\(\\theta\\) but also a confidence interval that communicates our uncertainty.\nWrite a short introduction explaining the idea of bootstrapping to the reader. The bootstrap is a resampling method that lets us estimate the variability of a statistic without relying on a closed-form formula. We resample (with replacement) from our observed data many times, compute the statistic of interest on each resample, and use the standard deviation of those resampled statistics as our estimate of the standard error.\nThen carry out the following steps:\n\nFrom your 1,000 CTA A draws and 1,000 CTA B draws, draw a bootstrap resample of size 1,000 (with replacement) from each group. Compute \\(\\hat\\theta^* = \\bar{X}_A^* - \\bar{X}_B^*\\) for that resample.\nRepeat step 1 a total of 1,000 times to produce a vector of 1,000 bootstrapped estimates of \\(\\theta\\).\nCompute the standard deviation of those 1,000 values. This is your bootstrapped standard error.\nCompare it to the analytical standard error. For the difference in means of two independent Bernoulli samples, the standard error formula is:\n\n\n\\[\nSE(\\hat\\theta) = \\sqrt{\\frac{\\hat\\pi_A(1 - \\hat\\pi_A)}{n_A} + \\frac{\\hat\\pi_B(1 - \\hat\\pi_B)}{n_B}}\n\\]\nwhere \\(\\hat\\pi_A\\) and \\(\\hat\\pi_B\\) are the sample proportions and \\(n_A\\) and \\(n_B\\) are the sample sizes.\n\nReport both the bootstrapped standard error and the analytical standard error and comment on how close they are to each other. Then use the bootstrapped standard error to construct a 95% confidence interval for \\(\\theta\\) and interpret it for the reader."
-  },
-  {
-    "objectID": "hw1_questions.html#the-central-limit-theorem",
-    "href": "hw1_questions.html#the-central-limit-theorem",
-    "title": "A/B Testing a Call to Action",
-    "section": "The Central Limit Theorem",
-    "text": "The Central Limit Theorem\n\n\n\n\n\n\nNote\n\n\n\n\nWrite a short introduction explaining the Central Limit Theorem to the reader: regardless of the shape of the underlying population distribution, the sampling distribution of the sample mean (and therefore of the difference in sample means) becomes approximately Normal as the sample size grows.\nThen demonstrate this visually by creating four histograms, one for each of the following sample sizes: \\(n \\in \\{25, 50, 100, 500\\}\\).\nFor each sample size \\(n\\):\n\nDraw \\(n\\) observations from the CTA A distribution and \\(n\\) observations from the CTA B distribution.\nCompute \\(\\hat\\theta = \\bar{X}_A - \\bar{X}_B\\).\nRepeat steps 1–2 a total of 1,000 times to produce 1,000 values of \\(\\hat\\theta\\).\nPlot a histogram of those 1,000 values.\n\nArrange the four histograms so they can be compared easily (e.g., in a 2x2 grid with consistent x-axis scales).\nAfter the plots, write a few sentences explaining what the reader should observe: at small sample sizes the histogram may look rough or asymmetric, but as \\(n\\) increases the distribution of \\(\\hat\\theta\\) becomes smoother and more bell-shaped, illustrating the Central Limit Theorem in action."
-  },
-  {
-    "objectID": "hw1_questions.html#hypothesis-testing",
-    "href": "hw1_questions.html#hypothesis-testing",
-    "title": "A/B Testing a Call to Action",
-    "section": "Hypothesis Testing",
-    "text": "Hypothesis Testing\n\n\n\n\n\n\nNote\n\n\n\n\nNow that we have seen the CLT in action — that the sampling distribution of \\(\\hat\\theta\\) is approximately Normal for large samples — we can use this result to perform a formal hypothesis test.\nWrite a paragraph explaining what a hypothesis test is to the reader. We set up a null hypothesis \\(H_0: \\theta = 0\\) (i.e., the two CTAs produce the same sign-up rate) and an alternative hypothesis \\(H_1: \\theta \\neq 0\\). The goal is to assess whether the data provide enough evidence to reject \\(H_0\\).\nThen explain why we standardize \\(\\hat\\theta\\) to form a test statistic. We compute:\n\n\\[\nz = \\frac{\\hat\\theta - 0}{SE(\\hat\\theta)}\n\\]\n\nWalk the reader through the logic of this standardization step by step:\n\nBy the CLT, we know that \\(\\hat\\theta\\) is approximately Normal for large samples. Under \\(H_0\\), the mean of that distribution is 0.\nWhen we divide a Normal random variable by its standard deviation, we get a standard Normal \\(N(0,1)\\). So under \\(H_0\\), \\(z \\;\\dot\\sim\\; N(0,1)\\).\nThis means we know the distribution of our test statistic under the null, which is exactly what we need to compute a p-value.\n\nExplain to the reader why this is sometimes called a “t-test” even though the test statistic follows an approximate Normal distribution, not a t-distribution. The classical t-test arises when the data are drawn from a Normal distribution and the variance must be estimated — the ratio then follows an exact t-distribution. In our setting the data are Bernoulli (not Normal), so there is no exact t-distribution result. The CLT gives us approximate Normality, and since we estimate the SE from the data, what we are really doing is closer to a z-test. In practice, for large samples the t-distribution and the standard Normal are nearly identical, so the distinction has little practical consequence — but it is important to understand why.\nUsing your simulated data, compute the test statistic and its associated p-value (using the standard Normal distribution as the reference). Interpret the result for the reader."
-  },
-  {
-    "objectID": "hw1_questions.html#the-t-test-as-a-regression",
-    "href": "hw1_questions.html#the-t-test-as-a-regression",
-    "title": "A/B Testing a Call to Action",
-    "section": "The T-Test as a Regression",
-    "text": "The T-Test as a Regression\n\n\n\n\n\n\nNote\n\n\n\n\nIt turns out that the two-sample test we just ran is mathematically equivalent to a simple linear regression. Understanding this connection is useful because it means the same machinery — and the same software — that you use for regression can also perform hypothesis tests, and it generalizes naturally to more complex experimental designs.\nExplain the setup to the reader. Stack the CTA A and CTA B data into a single dataset with two columns: an outcome \\(Y_i\\) (1 if the visitor signed up, 0 otherwise) and an indicator \\(D_i\\) (1 if the visitor saw CTA A, 0 if they saw CTA B). Then fit the regression:\n\n\\[\nY_i = \\beta_0 + \\beta_1 D_i + \\varepsilon_i\n\\]\n\nWalk through the interpretation of the coefficients:\n\n\\(\\beta_0\\) is the expected value of \\(Y_i\\) when \\(D_i = 0\\) — i.e., the mean of the B group, which estimates \\(\\pi_B\\).\n\\(\\beta_0 + \\beta_1\\) is the expected value of \\(Y_i\\) when \\(D_i = 1\\) — i.e., the mean of the A group, which estimates \\(\\pi_A\\).\nTherefore \\(\\beta_1 = \\pi_A - \\pi_B = \\theta\\), and the OLS estimate \\(\\hat\\beta_1\\) is numerically identical to \\(\\hat\\theta = \\bar{X}_A - \\bar{X}_B\\).\n\nFit this regression using your simulated data. Report the coefficient estimate \\(\\hat\\beta_1\\), its standard error, its t-statistic, and its p-value. Compare these to the values you computed in the previous section using the two-sample approach — they should match (up to a small difference in how the standard error is computed; standard OLS assumes a single pooled variance, while the two-sample formula we used assumes separate variances for each group).\nExplain to the reader why this equivalence matters: the regression framework makes it easy to add controls, interactions, or additional treatment arms, all while producing the same inference in the simple case."
-  },
-  {
-    "objectID": "hw1_questions.html#the-problem-with-peeking",
-    "href": "hw1_questions.html#the-problem-with-peeking",
-    "title": "A/B Testing a Call to Action",
-    "section": "The Problem with Peeking",
-    "text": "The Problem with Peeking\n\n\n\n\n\n\nNote\n\n\n\n\nYour boss is impatient. Rather than waiting until all 1,000 visitors have been assigned to each group, she wants to run the hypothesis test after every 100 visitors per group — peeking at the results after 100, 200, 300, …, up to 1,000 visitors per group (10 tests in total). If any of those tests comes back significant at the \\(\\alpha = 0.05\\) level, she wants to declare a winner and stop the experiment early.\nExplain to the reader why this is problematic under classical frequentist statistics. The key issue is that a single test at \\(\\alpha = 0.05\\) has a 5% chance of a false positive (rejecting \\(H_0\\) when it is actually true). But when you conduct multiple tests on accumulating data, each peek is another opportunity to get a false positive. The overall probability of at least one false rejection across all the peeks is much higher than 5%.\nDemonstrate this with a simulation. The idea is as follows:\n\nSet up a world where the null hypothesis is true: \\(\\pi_A = \\pi_B = 0.20\\) (i.e., \\(\\theta = 0\\), there is no difference between the CTAs).\nSimulate a single experiment: draw 1,000 observations for group A and 1,000 for group B. After every 100 observations per group (at \\(n = 100, 200, \\ldots, 1000\\)), compute the z-statistic and p-value. Record whether any of the 10 p-values falls below 0.05.\nRepeat step 2 a total of 10,000 times to simulate 10,000 experiments.\nCompute the fraction of those 10,000 experiments in which at least one peek produced a significant result. This is the empirical false positive rate under peeking.\n\nCompare this to the nominal 5% false positive rate of a single test. Report the result and explain to the reader why peeking inflates the Type I error rate and what this means in practice for running A/B tests."
-  },
-  {
-    "objectID": "projects/blackfriday/airbnb/index.html",
-    "href": "projects/blackfriday/airbnb/index.html",
-    "title": "NYC Airbnb Market Analysis",
+    "objectID": "projects/blackfriday/index.html",
+    "href": "projects/blackfriday/index.html",
+    "title": "Black Friday Analysis",
     "section": "",
-    "text": "This project analyzes transportation and housing-related data to understand patterns in trip duration, service usage, and housing preferences."
+    "text": "This project analyzes customer purchase behavior during Black Friday using transaction data. The goal is to understand how different demographic factors influence spending patterns."
   },
   {
-    "objectID": "projects/blackfriday/airbnb/index.html#project-overview",
-    "href": "projects/blackfriday/airbnb/index.html#project-overview",
-    "title": "NYC Airbnb Market Analysis",
+    "objectID": "projects/blackfriday/index.html#project-overview",
+    "href": "projects/blackfriday/index.html#project-overview",
+    "title": "Black Friday Analysis",
     "section": "",
-    "text": "This project analyzes transportation and housing-related data to understand patterns in trip duration, service usage, and housing preferences."
+    "text": "This project analyzes customer purchase behavior during Black Friday using transaction data. The goal is to understand how different demographic factors influence spending patterns."
   },
   {
-    "objectID": "projects/blackfriday/airbnb/index.html#key-questions",
-    "href": "projects/blackfriday/airbnb/index.html#key-questions",
-    "title": "NYC Airbnb Market Analysis",
+    "objectID": "projects/blackfriday/index.html#key-questions",
+    "href": "projects/blackfriday/index.html#key-questions",
+    "title": "Black Friday Analysis",
     "section": "Key Questions",
-    "text": "Key Questions\n\nHow does trip duration vary across service providers?\nWhat factors influence average trip distance?\nHow do housing types differ in usage patterns?"
+    "text": "Key Questions\n\nWhich age group spends the most?\nHow does occupation affect purchasing behavior?\nDo different age groups prefer different products?"
   },
   {
-    "objectID": "projects/blackfriday/airbnb/index.html#data-methods",
-    "href": "projects/blackfriday/airbnb/index.html#data-methods",
-    "title": "NYC Airbnb Market Analysis",
+    "objectID": "projects/blackfriday/index.html#data-methods",
+    "href": "projects/blackfriday/index.html#data-methods",
+    "title": "Black Friday Analysis",
     "section": "Data & Methods",
     "text": "Data & Methods\n\nData cleaning using Python (pandas)\nExploratory Data Analysis (EDA)\nVisualization using matplotlib"
   },
   {
-    "objectID": "projects/blackfriday/airbnb/index.html#key-visualizations",
-    "href": "projects/blackfriday/airbnb/index.html#key-visualizations",
-    "title": "NYC Airbnb Market Analysis",
+    "objectID": "projects/blackfriday/index.html#key-visualizations",
+    "href": "projects/blackfriday/index.html#key-visualizations",
+    "title": "Black Friday Analysis",
     "section": "Key Visualizations",
-    "text": "Key Visualizations\n\nPrice Distribution\n\nThe distribution of listing prices is highly right-skewed, indicating that while most listings are affordable, a small number of listings have extremely high prices.\n\n\n\nListing Type Distribution\n\nEntire homes/apartments dominate the market, followed by private rooms, while shared rooms represent only a small portion of listings.\n\n\n\nPrice and Reviews by Area\n\nManhattan has the highest average prices, while Brooklyn and Queens attract a large number of reviews, indicating strong demand in these areas."
+    "text": "Key Visualizations\n\nSpending by Age\n\nCustomers aged 26–35 contribute the highest total spending, making them the most valuable customer segment.\n\n\n\nSpending by Occupation\n\nSpending varies significantly across occupations, suggesting income level and job type influence purchasing behavior.\n\n\n\nProduct Preferences by Age Group\n\nDifferent age groups show distinct preferences for product categories, indicating opportunities for targeted marketing strategies."
   },
   {
-    "objectID": "projects/blackfriday/airbnb/index.html#key-insights",
-    "href": "projects/blackfriday/airbnb/index.html#key-insights",
-    "title": "NYC Airbnb Market Analysis",
+    "objectID": "projects/blackfriday/index.html#key-insights",
+    "href": "projects/blackfriday/index.html#key-insights",
+    "title": "Black Friday Analysis",
     "section": "Key Insights",
-    "text": "Key Insights\n\nTrip duration varies significantly across providers\nCustomer behavior differs by service type\nHousing preferences vary across user groups"
+    "text": "Key Insights\n\nThe 26–35 age group is the primary contributor to total sales\nConsumer behavior varies significantly by occupation\nProduct preferences differ across age segments"
   },
   {
-    "objectID": "projects/blackfriday/airbnb/index.html#full-project",
-    "href": "projects/blackfriday/airbnb/index.html#full-project",
-    "title": "NYC Airbnb Market Analysis",
-    "section": "Full Project",
-    "text": "Full Project\nFor full analysis and code, please download the notebook:\nDownload Notebook"
+    "objectID": "projects/blackfriday/index.html#full-project",
+    "href": "projects/blackfriday/index.html#full-project",
+    "title": "Black Friday Analysis",
+    "section": "📎 Full Project",
+    "text": "📎 Full Project\nFor full analysis and code, please download the notebook:\nDownload Notebook"
+  },
+  {
+    "objectID": "projects/Replicate Causal Academic Work/analysis.html",
+    "href": "projects/Replicate Causal Academic Work/analysis.html",
+    "title": "Replication of Karlan and List (2007)",
+    "section": "",
+    "text": "Author: Kristin Yang\nDate: April 22, 2026"
+  },
+  {
+    "objectID": "projects/Replicate Causal Academic Work/analysis.html#does-price-matter-in-charitable-giving",
+    "href": "projects/Replicate Causal Academic Work/analysis.html#does-price-matter-in-charitable-giving",
+    "title": "Replication of Karlan and List (2007)",
+    "section": "",
+    "text": "Author: Kristin Yang\nDate: April 22, 2026"
+  },
+  {
+    "objectID": "projects/Replicate Causal Academic Work/analysis.html#introduction",
+    "href": "projects/Replicate Causal Academic Work/analysis.html#introduction",
+    "title": "Replication of Karlan and List (2007)",
+    "section": "Introduction",
+    "text": "Introduction\nThis paper studies whether financial incentives, such as matching donations, can increase charitable giving. Karlan and List (2007) conduct a large-scale field experiment in which potential donors are randomly assigned to receive or not receive a matching grant offer.\nBecause the assignment to treatment and control groups is random, any difference in donation behavior between the two groups can be interpreted as a causal effect of the matching incentive. This paper is important because it provides evidence on how nonprofits can design more effective fundraising strategies.\n\nimport pandas as pd\nimport statsmodels.formula.api as smf\n\ndf = pd.read_stata(\"AERtables1-5.dta\")"
+  },
+  {
+    "objectID": "projects/Replicate Causal Academic Work/analysis.html#main-analysis",
+    "href": "projects/Replicate Causal Academic Work/analysis.html#main-analysis",
+    "title": "Replication of Karlan and List (2007)",
+    "section": "Main Analysis",
+    "text": "Main Analysis\n\nBalance Check (Table 1)\nThe comparison of baseline characteristics between the treatment and control groups shows that they are very similar. This suggests that randomization was successful and there is no evidence of selection bias.\n\ndf.groupby('treatment')[['years', 'freq']].mean().round(2)\n\n\n\n\n\n\n\n\nyears\nfreq\n\n\ntreatment\n\n\n\n\n\n\n0.0\n6.14\n8.05\n\n\n1.0\n6.08\n8.04\n\n\n\n\n\n\n\n\n\nEffect of Treatment on Giving (Table 2A)\nWe estimate a simple linear regression to examine whether the treatment affects the probability of giving.\n\nmodel = smf.ols('gave ~ treatment', data=df).fit()\nmodel.summary()\n\n\nOLS Regression Results\n\n\nDep. Variable:\ngave\nR-squared:\n0.000\n\n\nModel:\nOLS\nAdj. R-squared:\n0.000\n\n\nMethod:\nLeast Squares\nF-statistic:\n9.618\n\n\nDate:\nWed, 22 Apr 2026\nProb (F-statistic):\n0.00193\n\n\nTime:\n07:36:59\nLog-Likelihood:\n26630.\n\n\nNo. Observations:\n50083\nAIC:\n-5.326e+04\n\n\nDf Residuals:\n50081\nBIC:\n-5.324e+04\n\n\nDf Model:\n1\n\n\n\n\nCovariance Type:\nnonrobust\n\n\n\n\n\n\n\n\n\n\n\ncoef\nstd err\nt\nP&gt;|t|\n[0.025\n0.975]\n\n\nIntercept\n0.0179\n0.001\n16.225\n0.000\n0.016\n0.020\n\n\ntreatment\n0.0042\n0.001\n3.101\n0.002\n0.002\n0.007\n\n\n\n\n\n\n\n\nOmnibus:\n59814.280\nDurbin-Watson:\n1.997\n\n\nProb(Omnibus):\n0.000\nJarque-Bera (JB):\n4317152.727\n\n\nSkew:\n6.740\nProb(JB):\n0.00\n\n\nKurtosis:\n46.440\nCond. No.\n3.23\n\n\n\nNotes:[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.\n\n\nThe regression results show that the treatment variable has a positive and statistically significant effect on donation behavior. The coefficient on treatment is approximately 0.0042, indicating that individuals in the treatment group are about 0.42 percentage points more likely to donate than those in the control group.\n\n\nRegression with Controls (Table 3)\nNext, we include control variables such as prior donation history and donation frequency to test the robustness of the results.\n\nmodel2 = smf.ols('gave ~ treatment + years + freq', data=df).fit()\nmodel2.summary()\n\n\nOLS Regression Results\n\n\nDep. Variable:\ngave\nR-squared:\n0.017\n\n\nModel:\nOLS\nAdj. R-squared:\n0.017\n\n\nMethod:\nLeast Squares\nF-statistic:\n291.7\n\n\nDate:\nWed, 22 Apr 2026\nProb (F-statistic):\n9.85e-188\n\n\nTime:\n07:36:59\nLog-Likelihood:\n27058.\n\n\nNo. Observations:\n50082\nAIC:\n-5.411e+04\n\n\nDf Residuals:\n50078\nBIC:\n-5.407e+04\n\n\nDf Model:\n3\n\n\n\n\nCovariance Type:\nnonrobust\n\n\n\n\n\n\n\n\n\n\n\ncoef\nstd err\nt\nP&gt;|t|\n[0.025\n0.975]\n\n\nIntercept\n0.0147\n0.001\n11.332\n0.000\n0.012\n0.017\n\n\ntreatment\n0.0041\n0.001\n3.050\n0.002\n0.001\n0.007\n\n\nyears\n-0.0022\n0.000\n-14.941\n0.000\n-0.003\n-0.002\n\n\nfreq\n0.0021\n7.23e-05\n29.001\n0.000\n0.002\n0.002\n\n\n\n\n\n\n\n\nOmnibus:\n58996.565\nDurbin-Watson:\n1.998\n\n\nProb(Omnibus):\n0.000\nJarque-Bera (JB):\n4112891.825\n\n\nSkew:\n6.589\nProb(JB):\n0.00\n\n\nKurtosis:\n45.395\nCond. No.\n42.2\n\n\n\nNotes:[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.\n\n\nAfter including control variables, the treatment effect remains positive and statistically significant. The magnitude is very similar to the baseline estimate, suggesting that the results are robust."
   },
   {
     "objectID": "resume.html",
@@ -364,53 +350,123 @@
     "text": "The Problem with Peeking\nSo far we’ve been disciplined: collect all the data, then test once. But what if your boss is impatient? Suppose she wants to peek at the results after every 100 visitors per group — running a test at \\(n = 100, 200, \\ldots, 1000\\) — and stop as soon as any test comes back significant at \\(\\alpha = 0.05\\).\nThis sounds reasonable. It’s actually a serious statistical problem.\nA single test at \\(\\alpha = 0.05\\) has a 5% FALSE positive rate: even when \\(H_0\\) is TRUE, there’s a 1-in-20 chance of a spurious significant result. But each additional peek is another opportunity to get lucky. Across 10 peeks, the cumulative probability of at least one FALSE positive is much higher than 5%.\nLet’s measure exactly how much higher. We simulate a world where there is no TRUE difference: \\(\\pi_A = \\pi_B = 0.20\\).\n\n\nCode\nset.seed(123)\nn_sims  &lt;- 10000\npeek_ns &lt;- seq(100, 1000, by = 100)\npi_null &lt;- 0.20\n\nFALSE_positives &lt;- replicate(n_sims, {\n  A &lt;- rbinom(1000, 1, pi_null)\n  B &lt;- rbinom(1000, 1, pi_null)\n\n  any(sapply(peek_ns, function(k) {\n    th &lt;- mean(A[1:k]) - mean(B[1:k])\n    se &lt;- sqrt(mean(A[1:k]) * (1 - mean(A[1:k])) / k +\n               mean(B[1:k]) * (1 - mean(B[1:k])) / k)\n    if (se == 0) return(FALSE)\n    2 * (1 - pnorm(abs(th / se))) &lt; 0.05\n  }))\n})\n\nempirical_fpr &lt;- mean(FALSE_positives)\n\n\n\n\n\nThe Cost of Peeking (H₀ TRUE: πA = πB = 0.20)\n\n\nScenario\nFALSE.Positive.Rate\n\n\n\n\nSingle test (α = 0.05)\n5.0%\n\n\nPeeking 10 times\n19.8%\n\n\n\n\n\nWhen there is genuinely no difference between the two CTAs, peeking 10 times inflates the FALSE positive rate from 5% to roughly 20%. In other words, you’d declare a winner in about one out of every three experiments — even when neither CTA is better.\nIn practice, this means that if you run A/B tests with frequent interim looks and stop early whenever you see significance, a large fraction of your “discoveries” will be illusory. Classical frequentist tests require you to commit to a sample size upfront and test once. If you need to peek, use methods designed for sequential testing (such as alpha-spending functions) that properly control error rates across multiple looks.\n\nAll simulations were run in R with set.seed(42) (or set.seed(123) for the peeking section) for reproducibility."
   },
   {
-    "objectID": "projects/blackfriday/index.html",
-    "href": "projects/blackfriday/index.html",
-    "title": "Black Friday Analysis",
+    "objectID": "projects/blackfriday/airbnb/index.html",
+    "href": "projects/blackfriday/airbnb/index.html",
+    "title": "NYC Airbnb Market Analysis",
     "section": "",
-    "text": "This project analyzes customer purchase behavior during Black Friday using transaction data. The goal is to understand how different demographic factors influence spending patterns."
+    "text": "This project analyzes transportation and housing-related data to understand patterns in trip duration, service usage, and housing preferences."
   },
   {
-    "objectID": "projects/blackfriday/index.html#project-overview",
-    "href": "projects/blackfriday/index.html#project-overview",
-    "title": "Black Friday Analysis",
+    "objectID": "projects/blackfriday/airbnb/index.html#project-overview",
+    "href": "projects/blackfriday/airbnb/index.html#project-overview",
+    "title": "NYC Airbnb Market Analysis",
     "section": "",
-    "text": "This project analyzes customer purchase behavior during Black Friday using transaction data. The goal is to understand how different demographic factors influence spending patterns."
+    "text": "This project analyzes transportation and housing-related data to understand patterns in trip duration, service usage, and housing preferences."
   },
   {
-    "objectID": "projects/blackfriday/index.html#key-questions",
-    "href": "projects/blackfriday/index.html#key-questions",
-    "title": "Black Friday Analysis",
+    "objectID": "projects/blackfriday/airbnb/index.html#key-questions",
+    "href": "projects/blackfriday/airbnb/index.html#key-questions",
+    "title": "NYC Airbnb Market Analysis",
     "section": "Key Questions",
-    "text": "Key Questions\n\nWhich age group spends the most?\nHow does occupation affect purchasing behavior?\nDo different age groups prefer different products?"
+    "text": "Key Questions\n\nHow does trip duration vary across service providers?\nWhat factors influence average trip distance?\nHow do housing types differ in usage patterns?"
   },
   {
-    "objectID": "projects/blackfriday/index.html#data-methods",
-    "href": "projects/blackfriday/index.html#data-methods",
-    "title": "Black Friday Analysis",
+    "objectID": "projects/blackfriday/airbnb/index.html#data-methods",
+    "href": "projects/blackfriday/airbnb/index.html#data-methods",
+    "title": "NYC Airbnb Market Analysis",
     "section": "Data & Methods",
     "text": "Data & Methods\n\nData cleaning using Python (pandas)\nExploratory Data Analysis (EDA)\nVisualization using matplotlib"
   },
   {
-    "objectID": "projects/blackfriday/index.html#key-visualizations",
-    "href": "projects/blackfriday/index.html#key-visualizations",
-    "title": "Black Friday Analysis",
+    "objectID": "projects/blackfriday/airbnb/index.html#key-visualizations",
+    "href": "projects/blackfriday/airbnb/index.html#key-visualizations",
+    "title": "NYC Airbnb Market Analysis",
     "section": "Key Visualizations",
-    "text": "Key Visualizations\n\nSpending by Age\n\nCustomers aged 26–35 contribute the highest total spending, making them the most valuable customer segment.\n\n\n\nSpending by Occupation\n\nSpending varies significantly across occupations, suggesting income level and job type influence purchasing behavior.\n\n\n\nProduct Preferences by Age Group\n\nDifferent age groups show distinct preferences for product categories, indicating opportunities for targeted marketing strategies."
+    "text": "Key Visualizations\n\nPrice Distribution\n\nThe distribution of listing prices is highly right-skewed, indicating that while most listings are affordable, a small number of listings have extremely high prices.\n\n\n\nListing Type Distribution\n\nEntire homes/apartments dominate the market, followed by private rooms, while shared rooms represent only a small portion of listings.\n\n\n\nPrice and Reviews by Area\n\nManhattan has the highest average prices, while Brooklyn and Queens attract a large number of reviews, indicating strong demand in these areas."
   },
   {
-    "objectID": "projects/blackfriday/index.html#key-insights",
-    "href": "projects/blackfriday/index.html#key-insights",
-    "title": "Black Friday Analysis",
+    "objectID": "projects/blackfriday/airbnb/index.html#key-insights",
+    "href": "projects/blackfriday/airbnb/index.html#key-insights",
+    "title": "NYC Airbnb Market Analysis",
     "section": "Key Insights",
-    "text": "Key Insights\n\nThe 26–35 age group is the primary contributor to total sales\nConsumer behavior varies significantly by occupation\nProduct preferences differ across age segments"
+    "text": "Key Insights\n\nTrip duration varies significantly across providers\nCustomer behavior differs by service type\nHousing preferences vary across user groups"
   },
   {
-    "objectID": "projects/blackfriday/index.html#full-project",
-    "href": "projects/blackfriday/index.html#full-project",
-    "title": "Black Friday Analysis",
-    "section": "📎 Full Project",
-    "text": "📎 Full Project\nFor full analysis and code, please download the notebook:\nDownload Notebook"
+    "objectID": "projects/blackfriday/airbnb/index.html#full-project",
+    "href": "projects/blackfriday/airbnb/index.html#full-project",
+    "title": "NYC Airbnb Market Analysis",
+    "section": "Full Project",
+    "text": "Full Project\nFor full analysis and code, please download the notebook:\nDownload Notebook"
+  },
+  {
+    "objectID": "hw1_questions.html",
+    "href": "hw1_questions.html",
+    "title": "A/B Testing a Call to Action",
+    "section": "",
+    "text": "Note\n\n\n\nWrite a short introduction for the reader that sets the scene. Cover the following points in your own words:\n\nYou have a website and your landing page includes a place where visitors can sign up to receive your newsletter.\nYou want to test which of two possible “calls to action” (CTAs) leads to more sign-ups. CTA A reads “Sign up for our newsletter here!” and CTA B reads “Stay up to date by signing up!” (you are welcome to change the language of the CTAs).\nYou will evaluate which CTA performs better by running an A/B test. Explain what an A/B test is: visitors are randomly assigned to see one of the two CTAs, and you compare sign-up rates between the two groups."
+  },
+  {
+    "objectID": "hw1_questions.html#introduction",
+    "href": "hw1_questions.html#introduction",
+    "title": "A/B Testing a Call to Action",
+    "section": "",
+    "text": "Note\n\n\n\nWrite a short introduction for the reader that sets the scene. Cover the following points in your own words:\n\nYou have a website and your landing page includes a place where visitors can sign up to receive your newsletter.\nYou want to test which of two possible “calls to action” (CTAs) leads to more sign-ups. CTA A reads “Sign up for our newsletter here!” and CTA B reads “Stay up to date by signing up!” (you are welcome to change the language of the CTAs).\nYou will evaluate which CTA performs better by running an A/B test. Explain what an A/B test is: visitors are randomly assigned to see one of the two CTAs, and you compare sign-up rates between the two groups."
+  },
+  {
+    "objectID": "hw1_questions.html#the-ab-test-as-a-statistical-problem",
+    "href": "hw1_questions.html#the-ab-test-as-a-statistical-problem",
+    "title": "A/B Testing a Call to Action",
+    "section": "The A/B Test as a Statistical Problem",
+    "text": "The A/B Test as a Statistical Problem\n\n\n\n\n\n\nNote\n\n\n\nIn this section, connect the A/B test to a formal statistical framework. Address each of the following ideas:\n\nEach visitor either signs up or does not, so we can model each visitor’s outcome as a draw from a Bernoulli distribution with parameter \\(\\pi\\), the probability of signing up.\nBecause the CTA a visitor sees may influence their probability of signing up, we allow the parameter to differ across groups: visitors who see CTA A have sign-up probability \\(\\pi_A\\), and visitors who see CTA B have sign-up probability \\(\\pi_B\\). Each visitor can either sign up (1) or not (0).\nThe quantity we care about is \\(\\theta = \\pi_A - \\pi_B\\), the difference in sign-up rates between the two CTAs.\nOur estimator of \\(\\theta\\) is the difference in sample means, \\(\\hat\\theta = \\bar{X}_A - \\bar{X}_B\\). (Since each observation is either 0 or 1, the sample mean is simply the proportion of visitors who signed up — so \\(\\bar{X}_A = \\hat\\pi_A\\) and \\(\\bar{X}_B = \\hat\\pi_B\\).)"
+  },
+  {
+    "objectID": "hw1_questions.html#simulating-data",
+    "href": "hw1_questions.html#simulating-data",
+    "title": "A/B Testing a Call to Action",
+    "section": "Simulating Data",
+    "text": "Simulating Data\n\n\n\n\n\n\nNote\n\n\n\n\nWrite a brief paragraph for the reader explaining that in the real world we would not know the true values of \\(\\pi_A\\) and \\(\\pi_B\\), but for the purpose of this exercise we will set them ourselves so that we can study the behavior of our estimator when we know the truth.\nSuppose \\(\\pi_A = 0.22\\) and \\(\\pi_B = 0.18\\), so the true difference is \\(\\theta = 0.04\\).\nUsing a language of your choice, simulate 1,000 draws from each of the two Bernoulli distributions (2,000 total). Store the results so you can use them in the sections that follow."
+  },
+  {
+    "objectID": "hw1_questions.html#the-law-of-large-numbers",
+    "href": "hw1_questions.html#the-law-of-large-numbers",
+    "title": "A/B Testing a Call to Action",
+    "section": "The Law of Large Numbers",
+    "text": "The Law of Large Numbers\n\n\n\n\n\n\nNote\n\n\n\n\nWrite an introductory sentence or two explaining the Law of Large Numbers to the reader: as the sample size grows, the sample mean converges to the population mean. Connect this back to our estimator — the LLN is what gives us confidence that \\(\\hat\\theta = \\bar{X}_A - \\bar{X}_B\\) will be close to the true \\(\\theta\\) when our sample is large enough.\nThen demonstrate this visually. Using the simulated data from the previous section, compute the element-wise differences between the CTA A draws and the CTA B draws to get a vector of 1,000 differences. Calculate the cumulative average of that vector (i.e., the running mean after 1 draw, after 2 draws, …, after 1,000 draws) and plot it against the number of observations.\nThe plot should show a noisy average when only a few observations are included that settles down and converges toward the true difference of 0.04 as the sample size grows.\nAfter the plot, write a few sentences explaining what the reader should take away from it."
+  },
+  {
+    "objectID": "hw1_questions.html#bootstrap-standard-errors",
+    "href": "hw1_questions.html#bootstrap-standard-errors",
+    "title": "A/B Testing a Call to Action",
+    "section": "Bootstrap Standard Errors",
+    "text": "Bootstrap Standard Errors\n\n\n\n\n\n\nNote\n\n\n\n\nNow that we “trust” our estimator, the next natural question is: how precise is it? We would like to report not just a point estimate of \\(\\theta\\) but also a confidence interval that communicates our uncertainty.\nWrite a short introduction explaining the idea of bootstrapping to the reader. The bootstrap is a resampling method that lets us estimate the variability of a statistic without relying on a closed-form formula. We resample (with replacement) from our observed data many times, compute the statistic of interest on each resample, and use the standard deviation of those resampled statistics as our estimate of the standard error.\nThen carry out the following steps:\n\nFrom your 1,000 CTA A draws and 1,000 CTA B draws, draw a bootstrap resample of size 1,000 (with replacement) from each group. Compute \\(\\hat\\theta^* = \\bar{X}_A^* - \\bar{X}_B^*\\) for that resample.\nRepeat step 1 a total of 1,000 times to produce a vector of 1,000 bootstrapped estimates of \\(\\theta\\).\nCompute the standard deviation of those 1,000 values. This is your bootstrapped standard error.\nCompare it to the analytical standard error. For the difference in means of two independent Bernoulli samples, the standard error formula is:\n\n\n\\[\nSE(\\hat\\theta) = \\sqrt{\\frac{\\hat\\pi_A(1 - \\hat\\pi_A)}{n_A} + \\frac{\\hat\\pi_B(1 - \\hat\\pi_B)}{n_B}}\n\\]\nwhere \\(\\hat\\pi_A\\) and \\(\\hat\\pi_B\\) are the sample proportions and \\(n_A\\) and \\(n_B\\) are the sample sizes.\n\nReport both the bootstrapped standard error and the analytical standard error and comment on how close they are to each other. Then use the bootstrapped standard error to construct a 95% confidence interval for \\(\\theta\\) and interpret it for the reader."
+  },
+  {
+    "objectID": "hw1_questions.html#the-central-limit-theorem",
+    "href": "hw1_questions.html#the-central-limit-theorem",
+    "title": "A/B Testing a Call to Action",
+    "section": "The Central Limit Theorem",
+    "text": "The Central Limit Theorem\n\n\n\n\n\n\nNote\n\n\n\n\nWrite a short introduction explaining the Central Limit Theorem to the reader: regardless of the shape of the underlying population distribution, the sampling distribution of the sample mean (and therefore of the difference in sample means) becomes approximately Normal as the sample size grows.\nThen demonstrate this visually by creating four histograms, one for each of the following sample sizes: \\(n \\in \\{25, 50, 100, 500\\}\\).\nFor each sample size \\(n\\):\n\nDraw \\(n\\) observations from the CTA A distribution and \\(n\\) observations from the CTA B distribution.\nCompute \\(\\hat\\theta = \\bar{X}_A - \\bar{X}_B\\).\nRepeat steps 1–2 a total of 1,000 times to produce 1,000 values of \\(\\hat\\theta\\).\nPlot a histogram of those 1,000 values.\n\nArrange the four histograms so they can be compared easily (e.g., in a 2x2 grid with consistent x-axis scales).\nAfter the plots, write a few sentences explaining what the reader should observe: at small sample sizes the histogram may look rough or asymmetric, but as \\(n\\) increases the distribution of \\(\\hat\\theta\\) becomes smoother and more bell-shaped, illustrating the Central Limit Theorem in action."
+  },
+  {
+    "objectID": "hw1_questions.html#hypothesis-testing",
+    "href": "hw1_questions.html#hypothesis-testing",
+    "title": "A/B Testing a Call to Action",
+    "section": "Hypothesis Testing",
+    "text": "Hypothesis Testing\n\n\n\n\n\n\nNote\n\n\n\n\nNow that we have seen the CLT in action — that the sampling distribution of \\(\\hat\\theta\\) is approximately Normal for large samples — we can use this result to perform a formal hypothesis test.\nWrite a paragraph explaining what a hypothesis test is to the reader. We set up a null hypothesis \\(H_0: \\theta = 0\\) (i.e., the two CTAs produce the same sign-up rate) and an alternative hypothesis \\(H_1: \\theta \\neq 0\\). The goal is to assess whether the data provide enough evidence to reject \\(H_0\\).\nThen explain why we standardize \\(\\hat\\theta\\) to form a test statistic. We compute:\n\n\\[\nz = \\frac{\\hat\\theta - 0}{SE(\\hat\\theta)}\n\\]\n\nWalk the reader through the logic of this standardization step by step:\n\nBy the CLT, we know that \\(\\hat\\theta\\) is approximately Normal for large samples. Under \\(H_0\\), the mean of that distribution is 0.\nWhen we divide a Normal random variable by its standard deviation, we get a standard Normal \\(N(0,1)\\). So under \\(H_0\\), \\(z \\;\\dot\\sim\\; N(0,1)\\).\nThis means we know the distribution of our test statistic under the null, which is exactly what we need to compute a p-value.\n\nExplain to the reader why this is sometimes called a “t-test” even though the test statistic follows an approximate Normal distribution, not a t-distribution. The classical t-test arises when the data are drawn from a Normal distribution and the variance must be estimated — the ratio then follows an exact t-distribution. In our setting the data are Bernoulli (not Normal), so there is no exact t-distribution result. The CLT gives us approximate Normality, and since we estimate the SE from the data, what we are really doing is closer to a z-test. In practice, for large samples the t-distribution and the standard Normal are nearly identical, so the distinction has little practical consequence — but it is important to understand why.\nUsing your simulated data, compute the test statistic and its associated p-value (using the standard Normal distribution as the reference). Interpret the result for the reader."
+  },
+  {
+    "objectID": "hw1_questions.html#the-t-test-as-a-regression",
+    "href": "hw1_questions.html#the-t-test-as-a-regression",
+    "title": "A/B Testing a Call to Action",
+    "section": "The T-Test as a Regression",
+    "text": "The T-Test as a Regression\n\n\n\n\n\n\nNote\n\n\n\n\nIt turns out that the two-sample test we just ran is mathematically equivalent to a simple linear regression. Understanding this connection is useful because it means the same machinery — and the same software — that you use for regression can also perform hypothesis tests, and it generalizes naturally to more complex experimental designs.\nExplain the setup to the reader. Stack the CTA A and CTA B data into a single dataset with two columns: an outcome \\(Y_i\\) (1 if the visitor signed up, 0 otherwise) and an indicator \\(D_i\\) (1 if the visitor saw CTA A, 0 if they saw CTA B). Then fit the regression:\n\n\\[\nY_i = \\beta_0 + \\beta_1 D_i + \\varepsilon_i\n\\]\n\nWalk through the interpretation of the coefficients:\n\n\\(\\beta_0\\) is the expected value of \\(Y_i\\) when \\(D_i = 0\\) — i.e., the mean of the B group, which estimates \\(\\pi_B\\).\n\\(\\beta_0 + \\beta_1\\) is the expected value of \\(Y_i\\) when \\(D_i = 1\\) — i.e., the mean of the A group, which estimates \\(\\pi_A\\).\nTherefore \\(\\beta_1 = \\pi_A - \\pi_B = \\theta\\), and the OLS estimate \\(\\hat\\beta_1\\) is numerically identical to \\(\\hat\\theta = \\bar{X}_A - \\bar{X}_B\\).\n\nFit this regression using your simulated data. Report the coefficient estimate \\(\\hat\\beta_1\\), its standard error, its t-statistic, and its p-value. Compare these to the values you computed in the previous section using the two-sample approach — they should match (up to a small difference in how the standard error is computed; standard OLS assumes a single pooled variance, while the two-sample formula we used assumes separate variances for each group).\nExplain to the reader why this equivalence matters: the regression framework makes it easy to add controls, interactions, or additional treatment arms, all while producing the same inference in the simple case."
+  },
+  {
+    "objectID": "hw1_questions.html#the-problem-with-peeking",
+    "href": "hw1_questions.html#the-problem-with-peeking",
+    "title": "A/B Testing a Call to Action",
+    "section": "The Problem with Peeking",
+    "text": "The Problem with Peeking\n\n\n\n\n\n\nNote\n\n\n\n\nYour boss is impatient. Rather than waiting until all 1,000 visitors have been assigned to each group, she wants to run the hypothesis test after every 100 visitors per group — peeking at the results after 100, 200, 300, …, up to 1,000 visitors per group (10 tests in total). If any of those tests comes back significant at the \\(\\alpha = 0.05\\) level, she wants to declare a winner and stop the experiment early.\nExplain to the reader why this is problematic under classical frequentist statistics. The key issue is that a single test at \\(\\alpha = 0.05\\) has a 5% chance of a false positive (rejecting \\(H_0\\) when it is actually true). But when you conduct multiple tests on accumulating data, each peek is another opportunity to get a false positive. The overall probability of at least one false rejection across all the peeks is much higher than 5%.\nDemonstrate this with a simulation. The idea is as follows:\n\nSet up a world where the null hypothesis is true: \\(\\pi_A = \\pi_B = 0.20\\) (i.e., \\(\\theta = 0\\), there is no difference between the CTAs).\nSimulate a single experiment: draw 1,000 observations for group A and 1,000 for group B. After every 100 observations per group (at \\(n = 100, 200, \\ldots, 1000\\)), compute the z-statistic and p-value. Record whether any of the 10 p-values falls below 0.05.\nRepeat step 2 a total of 10,000 times to simulate 10,000 experiments.\nCompute the fraction of those 10,000 experiments in which at least one peek produced a significant result. This is the empirical false positive rate under peeking.\n\nCompare this to the nominal 5% false positive rate of a single test. Report the result and explain to the reader why peeking inflates the Type I error rate and what this means in practice for running A/B tests."
   },
   {
     "objectID": "index.html",
@@ -418,5 +474,61 @@
     "title": "Kristin Yang",
     "section": "",
     "text": "Welcome to my website!"
+  },
+  {
+    "objectID": "projects/Replicate Causal Academic Work/hw2_questions.html",
+    "href": "projects/Replicate Causal Academic Work/hw2_questions.html",
+    "title": "Replication of Karlan and List (2007)",
+    "section": "",
+    "text": "This paper studies whether financial incentives, such as matching donations, can increase charitable giving. Karlan and List (2007) conduct a large-scale field experiment in which potential donors are randomly assigned to receive or not receive a matching grant offer.\nBecause the assignment to treatment and control groups is random, any difference in donation behavior between the two groups can be interpreted as a causal effect of the matching incentive. This paper is important because it provides evidence on how nonprofits can design more effective fundraising strategies."
+  },
+  {
+    "objectID": "projects/Replicate Causal Academic Work/hw2_questions.html#introduction",
+    "href": "projects/Replicate Causal Academic Work/hw2_questions.html#introduction",
+    "title": "Replication of Karlan and List (2007)",
+    "section": "",
+    "text": "This paper studies whether financial incentives, such as matching donations, can increase charitable giving. Karlan and List (2007) conduct a large-scale field experiment in which potential donors are randomly assigned to receive or not receive a matching grant offer.\nBecause the assignment to treatment and control groups is random, any difference in donation behavior between the two groups can be interpreted as a causal effect of the matching incentive. This paper is important because it provides evidence on how nonprofits can design more effective fundraising strategies."
+  },
+  {
+    "objectID": "projects/Replicate Causal Academic Work/hw2_questions.html#main-analysis",
+    "href": "projects/Replicate Causal Academic Work/hw2_questions.html#main-analysis",
+    "title": "Replication of Karlan and List (2007)",
+    "section": "Main Analysis",
+    "text": "Main Analysis\n\nBalance Check (Table 1)\nThe comparison of baseline characteristics between the treatment and control groups shows that they are very similar. For example, the average number of prior donation years is approximately 6.14 for the control group and 6.08 for the treatment group. This suggests that randomization was successful and there is no evidence of selection bias.\n\ndf.groupby('treatment')[['years', 'freq']].mean().round(2)\n\n\n\nEffect of Treatment on Giving (Table 2A)\nThe regression results show that the treatment variable has a positive and statistically significant effect on donation behavior. The coefficient on treatment is 0.0042, indicating that individuals in the treatment group are approximately 0.42 percentage points more likely to donate compared to those in the control group. This effect is statistically significant (p &lt; 0.01), suggesting that matching donations increase the likelihood of giving.\n\nmodel = smf.ols('gave ~ treatment', data=df).fit()\nmodel.summary()\n\n\n\nRegression with Controls (Table 3)\nAfter including control variables such as prior donation history (years) and donation frequency (freq), the estimated treatment effect remains positive and statistically significant. The coefficient on treatment is 0.0041, which is very similar to the baseline estimate. This suggests that the treatment effect is robust and not driven by pre-existing differences between individuals.\n\nmodel2 = smf.ols('gave ~ treatment + years + freq', data=df).fit()\nmodel2.summary()"
+  },
+  {
+    "objectID": "projects/Replicate Causal Academic Work/hw2_questions.html#something-additional",
+    "href": "projects/Replicate Causal Academic Work/hw2_questions.html#something-additional",
+    "title": "Replication of Karlan and List (2007)",
+    "section": "Something Additional",
+    "text": "Something Additional\n\nAdditional Analysis\nThe magnitude of the treatment effect is relatively small. While the matching incentive increases the probability of donating, the overall effect size is modest. This suggests that although matching grants are effective, they may not lead to large changes in donor behavior. This highlights the importance of considering both statistical significance and economic significance when evaluating policy interventions."
+  },
+  {
+    "objectID": "analysis.html",
+    "href": "analysis.html",
+    "title": "Replication of Karlan and List (2007)",
+    "section": "",
+    "text": "Author: Kristin Yang\nDate: April 22, 2026"
+  },
+  {
+    "objectID": "analysis.html#does-price-matter-in-charitable-giving",
+    "href": "analysis.html#does-price-matter-in-charitable-giving",
+    "title": "Replication of Karlan and List (2007)",
+    "section": "",
+    "text": "Author: Kristin Yang\nDate: April 22, 2026"
+  },
+  {
+    "objectID": "analysis.html#introduction",
+    "href": "analysis.html#introduction",
+    "title": "Replication of Karlan and List (2007)",
+    "section": "Introduction",
+    "text": "Introduction\nThis paper studies whether financial incentives, such as matching donations, can increase charitable giving. Karlan and List (2007) conduct a large-scale field experiment in which potential donors are randomly assigned to receive or not receive a matching grant offer.\nBecause the assignment to treatment and control groups is random, any difference in donation behavior between the two groups can be interpreted as a causal effect of the matching incentive. This paper is important because it provides evidence on how nonprofits can design more effective fundraising strategies.\n\nimport pandas as pd\nimport statsmodels.formula.api as smf\n\ndf = pd.read_stata(\"AERtables1-5.dta\")"
+  },
+  {
+    "objectID": "analysis.html#main-analysis",
+    "href": "analysis.html#main-analysis",
+    "title": "Replication of Karlan and List (2007)",
+    "section": "Main Analysis",
+    "text": "Main Analysis\n\nBalance Check (Table 1)\nThe comparison of baseline characteristics between the treatment and control groups shows that they are very similar. This suggests that randomization was successful and there is no evidence of selection bias.\n\ndf.groupby('treatment')[['years', 'freq']].mean().round(2)\n\n\n\n\n\n\n\n\nyears\nfreq\n\n\ntreatment\n\n\n\n\n\n\n0.0\n6.14\n8.05\n\n\n1.0\n6.08\n8.04\n\n\n\n\n\n\n\n\n\nEffect of Treatment on Giving (Table 2A)\nWe estimate a simple linear regression to examine whether the treatment affects the probability of giving.\n\nmodel = smf.ols('gave ~ treatment', data=df).fit()\nmodel.summary()\n\n\nOLS Regression Results\n\n\nDep. Variable:\ngave\nR-squared:\n0.000\n\n\nModel:\nOLS\nAdj. R-squared:\n0.000\n\n\nMethod:\nLeast Squares\nF-statistic:\n9.618\n\n\nDate:\nWed, 22 Apr 2026\nProb (F-statistic):\n0.00193\n\n\nTime:\n07:36:59\nLog-Likelihood:\n26630.\n\n\nNo. Observations:\n50083\nAIC:\n-5.326e+04\n\n\nDf Residuals:\n50081\nBIC:\n-5.324e+04\n\n\nDf Model:\n1\n\n\n\n\nCovariance Type:\nnonrobust\n\n\n\n\n\n\n\n\n\n\n\ncoef\nstd err\nt\nP&gt;|t|\n[0.025\n0.975]\n\n\nIntercept\n0.0179\n0.001\n16.225\n0.000\n0.016\n0.020\n\n\ntreatment\n0.0042\n0.001\n3.101\n0.002\n0.002\n0.007\n\n\n\n\n\n\n\n\nOmnibus:\n59814.280\nDurbin-Watson:\n1.997\n\n\nProb(Omnibus):\n0.000\nJarque-Bera (JB):\n4317152.727\n\n\nSkew:\n6.740\nProb(JB):\n0.00\n\n\nKurtosis:\n46.440\nCond. No.\n3.23\n\n\n\nNotes:[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.\n\n\nThe regression results show that the treatment variable has a positive and statistically significant effect on donation behavior. The coefficient on treatment is approximately 0.0042, indicating that individuals in the treatment group are about 0.42 percentage points more likely to donate than those in the control group.\n\n\nRegression with Controls (Table 3)\nNext, we include control variables such as prior donation history and donation frequency to test the robustness of the results.\n\nmodel2 = smf.ols('gave ~ treatment + years + freq', data=df).fit()\nmodel2.summary()\n\n\nOLS Regression Results\n\n\nDep. Variable:\ngave\nR-squared:\n0.017\n\n\nModel:\nOLS\nAdj. R-squared:\n0.017\n\n\nMethod:\nLeast Squares\nF-statistic:\n291.7\n\n\nDate:\nWed, 22 Apr 2026\nProb (F-statistic):\n9.85e-188\n\n\nTime:\n07:36:59\nLog-Likelihood:\n27058.\n\n\nNo. Observations:\n50082\nAIC:\n-5.411e+04\n\n\nDf Residuals:\n50078\nBIC:\n-5.407e+04\n\n\nDf Model:\n3\n\n\n\n\nCovariance Type:\nnonrobust\n\n\n\n\n\n\n\n\n\n\n\ncoef\nstd err\nt\nP&gt;|t|\n[0.025\n0.975]\n\n\nIntercept\n0.0147\n0.001\n11.332\n0.000\n0.012\n0.017\n\n\ntreatment\n0.0041\n0.001\n3.050\n0.002\n0.001\n0.007\n\n\nyears\n-0.0022\n0.000\n-14.941\n0.000\n-0.003\n-0.002\n\n\nfreq\n0.0021\n7.23e-05\n29.001\n0.000\n0.002\n0.002\n\n\n\n\n\n\n\n\nOmnibus:\n58996.565\nDurbin-Watson:\n1.998\n\n\nProb(Omnibus):\n0.000\nJarque-Bera (JB):\n4112891.825\n\n\nSkew:\n6.589\nProb(JB):\n0.00\n\n\nKurtosis:\n45.395\nCond. No.\n42.2\n\n\n\nNotes:[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.\n\n\nAfter including control variables, the treatment effect remains positive and statistically significant. The magnitude is very similar to the baseline estimate, suggesting that the results are robust."
   }
 ]
