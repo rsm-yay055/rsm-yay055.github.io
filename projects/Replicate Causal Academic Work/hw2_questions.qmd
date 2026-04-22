@@ -33,7 +33,7 @@ The comparison of baseline characteristics between the treatment and control gro
 df.groupby('treatment')[['years', 'freq']].mean().round(2)
 ```
 
-![](image%20copy.png)
+![](balance.png)
 
 ### Effect of Treatment on Giving (Table 2A)
 
