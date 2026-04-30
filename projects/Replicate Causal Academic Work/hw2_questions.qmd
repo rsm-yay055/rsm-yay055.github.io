@@ -65,3 +65,4 @@ model2.summary()
 ### Additional Analysis
 
 The magnitude of the treatment effect is relatively small. While the matching incentive increases the probability of donating, the overall effect size is modest. This suggests that although matching grants are effective, they may not lead to large changes in donor behavior. This highlights the importance of considering both statistical significance and economic significance when evaluating policy interventions.
+.
