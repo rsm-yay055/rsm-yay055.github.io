@@ -23,6 +23,8 @@ This paper studies whether financial incentives, such as matching donations, can
 
 Because the assignment to treatment and control groups is random, any difference in donation behavior between the two groups can be interpreted as a causal effect of the matching incentive. This paper is important because it provides evidence on how nonprofits can design more effective fundraising strategies.
 
+This replication first checks whether the treatment and control groups look similar before the experiment. It then estimates the effect of receiving a matching grant offer on the probability of giving, first without controls and then with controls for prior donation history. The final section discusses why the result is statistically significant but economically modest.
+
 ## Main Analysis
 
 ### Balance Check (Table 1)
@@ -62,6 +64,12 @@ model2.summary()
 
 ## Something Additional
 
-### Additional Analysis
+### Statistical Significance vs. Economic Significance
 
-The magnitude of the treatment effect is relatively small. While the matching incentive increases the probability of donating, the overall effect size is modest. This suggests that although matching grants are effective, they may not lead to large changes in donor behavior. This highlights the importance of considering both statistical significance and economic significance when evaluating policy interventions.
+One useful way to interpret the treatment effect is to separate statistical significance from economic significance. The regression results suggest that the matching grant offer has a statistically significant effect on whether someone gives. However, the estimated increase in giving is only about 0.4 percentage points, which is small in practical terms.
+
+This means that matching grants can help increase participation, but they may not dramatically change donor behavior on their own. For nonprofit organizations, the result suggests that matching campaigns should be evaluated not only by whether they increase donations, but also by whether the additional donations are large enough to justify the cost of securing and advertising the match.
+
+## Conclusion
+
+Overall, this replication supports the main finding of Karlan and List (2007): matching grant offers can increase the likelihood of charitable giving. The balance check supports the validity of the randomized design, and the regression results remain stable after adding controls for prior donation behavior. However, the small size of the estimated effect shows that statistical significance does not always imply a large practical impact. This distinction is important for nonprofits when deciding whether matching grant campaigns are worth implementing.
