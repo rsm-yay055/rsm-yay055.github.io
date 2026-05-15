@@ -1,6 +1,11 @@
 ---
 title: "My Projects"
 listing:
-  contents: projects
+  contents:
+    - hw3_questions.qmd
+    - projects/abtest/index.qmd
+    - projects/Replicate Causal Academic Work/hw2_questions.qmd
+    - projects/blackfriday/index.qmd
+    - projects/blackfriday/airbnb/index.qmd
   type: grid
 ---
