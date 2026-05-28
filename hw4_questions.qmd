@@ -742,3 +742,4 @@ The substantive takeaway is that students in this survey strongly prefer Marketi
 For a quick dashboard, I would use the counts score because it is simple and easy to explain. For a more rigorous point estimate, I would use the MLE MNL model because it has a clear likelihood and classical standard errors. If I wanted uncertainty for simulations or derived outcomes, I would use the Bayesian MNL approach because posterior draws can be pushed through any downstream calculation.
 
 The caveat is that these are preferences from a self-selected group of MSBA students. The results may reflect current instructors, prior coursework, timing in the program, or the particular students who answered the survey. If I had more time, I would estimate a hierarchical model that allows preferences to vary by student and compare whether different segments of students rank the classes differently.
+#
