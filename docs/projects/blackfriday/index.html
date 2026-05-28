@@ -130,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#product-preferences-by-age-group" id="toc-product-preferences-by-age-group" class="nav-link" data-scroll-target="#product-preferences-by-age-group">Product Preferences by Age Group</a></li>
   </ul></li>
   <li><a href="#key-insights" id="toc-key-insights" class="nav-link" data-scroll-target="#key-insights">Key Insights</a></li>
-  <li><a href="#full-project" id="toc-full-project" class="nav-link" data-scroll-target="#full-project">📎 Full Project</a></li>
+  <li><a href="#full-project" id="toc-full-project" class="nav-link" data-scroll-target="#full-project">🔗 Full Project</a></li>
   </ul>
 </nav>
     </div>
@@ -170,7 +170,7 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="project-overview" class="level2">
 <h2 class="anchored" data-anchor-id="project-overview">Project Overview</h2>
-<p>This project analyzes customer purchase behavior during Black Friday using transaction data. The goal is to understand how different demographic factors influence spending patterns.</p>
+<p>This project analyzes customer purchase behavior during Black Friday using transaction data from a large retail dataset. The goal is to understand how different demographic factors such as age, gender, and occupation influence spending patterns.</p>
 <hr>
 </section>
 <section id="key-questions" class="level2">
@@ -179,15 +179,17 @@ ul.task-list li input[type="checkbox"] {
 <li>Which age group spends the most?</li>
 <li>How does occupation affect purchasing behavior?</li>
 <li>Do different age groups prefer different products?</li>
+<li>Does gender play a role in spending amount?</li>
 </ul>
 <hr>
 </section>
 <section id="data-methods" class="level2">
 <h2 class="anchored" data-anchor-id="data-methods">Data &amp; Methods</h2>
 <ul>
-<li>Data cleaning using Python (pandas)</li>
-<li>Exploratory Data Analysis (EDA)</li>
-<li>Visualization using matplotlib</li>
+<li>Data cleaning and preprocessing using Python (pandas)</li>
+<li>Exploratory Data Analysis (EDA) to identify trends and patterns</li>
+<li>Visualization using matplotlib and seaborn</li>
+<li>Groupby aggregations to compare spending across demographic segments</li>
 </ul>
 <hr>
 </section>
@@ -195,34 +197,49 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="key-visualizations">Key Visualizations</h2>
 <section id="spending-by-age" class="level3">
 <h3 class="anchored" data-anchor-id="spending-by-age">Spending by Age</h3>
-<p><img src="age_spending.png" class="img-fluid"></p>
-<p>Customers aged <strong>26–35</strong> contribute the highest total spending, making them the most valuable customer segment.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="age_spending.png" class="img-fluid figure-img"></p>
+<figcaption>Total spending amount grouped by customer age group</figcaption>
+</figure>
+</div>
+<p>Customers aged <strong>26–35</strong> contribute the highest total spending, making them the most valuable customer segment. This group likely represents working adults with higher disposable income.</p>
 <hr>
 </section>
 <section id="spending-by-occupation" class="level3">
 <h3 class="anchored" data-anchor-id="spending-by-occupation">Spending by Occupation</h3>
-<p><img src="spending_by_occupation.png" class="img-fluid"></p>
-<p>Spending varies significantly across occupations, suggesting income level and job type influence purchasing behavior.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="spending_by_occupation.png" class="img-fluid figure-img"></p>
+<figcaption>Total spending grouped by customer occupation code</figcaption>
+</figure>
+</div>
+<p>Spending varies significantly across occupations, suggesting that income level and job type influence purchasing behavior. Certain occupations show notably higher average transaction values.</p>
 <hr>
 </section>
 <section id="product-preferences-by-age-group" class="level3">
 <h3 class="anchored" data-anchor-id="product-preferences-by-age-group">Product Preferences by Age Group</h3>
-<p><img src="product_sales_by_age.png" class="img-fluid"></p>
-<p>Different age groups show distinct preferences for product categories, indicating opportunities for targeted marketing strategies.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="product_sales_by_age.png" class="img-fluid figure-img"></p>
+<figcaption>Heatmap of product category preferences across age groups</figcaption>
+</figure>
+</div>
+<p>Different age groups show distinct preferences for product categories, indicating opportunities for targeted marketing strategies tailored to each segment.</p>
 <hr>
 </section>
 </section>
 <section id="key-insights" class="level2">
 <h2 class="anchored" data-anchor-id="key-insights">Key Insights</h2>
 <ul>
-<li>The <strong>26–35 age group</strong> is the primary contributor to total sales</li>
-<li>Consumer behavior varies significantly by <strong>occupation</strong></li>
-<li>Product preferences differ across <strong>age segments</strong></li>
+<li>The <strong>26–35 age group</strong> is the primary contributor to total sales, accounting for the largest share of Black Friday transactions</li>
+<li>Consumer behavior varies significantly by <strong>occupation</strong>, with some job categories spending nearly twice the average</li>
+<li>Product preferences differ across <strong>age segments</strong>, suggesting retailers can improve conversion rates through personalized recommendations</li>
 </ul>
 <hr>
 </section>
 <section id="full-project" class="level2">
-<h2 class="anchored" data-anchor-id="full-project">📎 Full Project</h2>
+<h2 class="anchored" data-anchor-id="full-project">🔗 Full Project</h2>
 <p>For full analysis and code, please download the notebook:</p>
 <p><a href="../../files/BlackFriday-checkpoint.html">Download Notebook</a></p>
 

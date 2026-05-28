@@ -1,0 +1,163 @@
+把你那---
+title: "Recommendation Algorithms and Consumer Behavior"
+author: "Kristin Yang"
+format:
+  revealjs:
+    theme: black
+    slide-number: true
+    chalkboard: true
+    transition: fade
+    incremental: false
+    width: 1280
+    height: 720
+    css: styles.css
+execute:
+  echo: false
+---
+
+## Recommendation Algorithms
+
+### Recommendation Algorithms and Consumer Behavior
+
+<div class="subtitle">How digital platforms shape what consumers see, want, and buy</div>
+
+::: notes
+Hey everyone! I think we've all experienced this before. You open TikTok, Amazon, or Netflix for a few minutes, and somehow you end up spending way more time or money than you expected.
+
+A big reason for that is recommendation algorithms. Today I'm going to talk about how these algorithms influence consumer behavior and why they've become such an important business tool.
+:::
+
+## What Are Recommendation Algorithms?
+
+- AI-driven systems that analyze user data to predict what users may want next
+- Track browsing history, purchase patterns, clicks, and ratings
+- Used by Amazon, Netflix, Spotify, and TikTok
+- Some estimates suggest recommendation systems influence over 35% of Amazon's sales
+
+::: notes
+So first, what are recommendation algorithms?
+
+They're AI systems that analyze user behavior like browsing history, purchases, clicks, and ratings to predict what users will probably engage with next.
+
+Platforms like Amazon, Netflix, Spotify, and TikTok all rely heavily on these systems.
+
+And they're extremely important for business. Some estimates suggest that recommendation systems influence more than 35% of Amazon's sales.
+
+So recommendation algorithms are no longer just a small feature. They play a major role in user engagement and revenue.
+:::
+
+## Key Influence Mechanisms
+
+:::: {.columns}
+::: {.column width="50%"}
+### Personalization
+Tailored homepages and feeds create a sense of relevance, increasing time on site and conversion rates.
+
+### Anchoring
+By surfacing premium items first, algorithms set high price anchors that make mid-range products feel like deals.
+:::
+
+::: {.column width="50%"}
+### Social Proof
+"Customers like you also bought..." leverages peer behavior to validate and nudge buying choices.
+
+### Scarcity Effect
+"Only 3 left in stock" and "Trending now" badges trigger urgency, pushing faster purchase decisions.
+:::
+::::
+
+::: notes
+These systems work well because they influence consumer decisions in several ways.
+
+Personalization is probably the most important one. Platforms tailor content and product recommendations based on user behavior, which keeps users engaged longer.
+
+Anchoring also matters. When expensive products are shown first, other options can seem more affordable by comparison.
+
+Social proof influences users too. When people see "customers also bought this," they're more likely to trust the recommendation.
+
+And finally, scarcity messages like "only 3 left in stock" can create urgency and encourage faster purchases.
+:::
+
+## Effect on Purchase Behavior
+
+- Recommendation engines increase average order value by 10 to 30 percent
+- Netflix's algorithm saves about $1 billion annually by reducing churn
+- Personalized recommendations drive up to 31 percent of e-commerce revenue
+- Users browse longer and are more likely to add items to cart
+- Many purchases were not planned before opening the app
+
+<div class="source">Sources: McKinsey & Co | Netflix, Gomez-Uribe & Hunt, ACM 2016 | Barilliance</div>
+
+::: notes
+The impact on consumer behavior is actually pretty significant.
+
+Studies show that recommendation systems can increase average order value by around 10 to 30 percent, and personalized recommendations drive a large share of e-commerce revenue.
+
+Users also tend to browse longer and are more likely to add products to their cart after seeing recommendations.
+
+For Netflix, recommendation algorithms are estimated to save about 1 billion dollars per year by reducing cancellations.
+
+So overall, these systems strongly influence both consumer behavior and company performance.
+:::
+
+## Filter Bubbles and Ethical Concerns
+
+:::: {.columns}
+::: {.column width="50%"}
+- Algorithms can keep showing similar products
+- Consumer choices may become narrower
+- New brands or alternatives may be harder to discover
+- Platform dependency can increase
+:::
+
+::: {.column width="50%"}
+- Large-scale data collection creates privacy concerns
+- Algorithms may reinforce bias or unequal visibility
+- GDPR and CCPA require more transparency and opt-out rights
+- Companies face pressure to build fairer systems
+:::
+::::
+
+::: notes
+But there are also some drawbacks to recommendation algorithms.
+
+Because platforms keep recommending similar content, users can end up in filter bubbles, where they see fewer new ideas or alternatives over time.
+
+There are also concerns about privacy and fairness because these systems rely heavily on user data collection.
+
+In some cases, algorithms may even influence pricing or visibility differently across groups of users.
+
+So while recommendation systems are powerful business tools, they also raise important ethical and consumer awareness issues.
+:::
+
+## Key Takeaways
+
+### Large Effects on Consumers
+All major platforms use recommendation algorithms, and they have large effects on consumer choices and on how effectively these platforms operate.
+
+### Real Drawbacks to Be Aware Of
+These algorithms come with real drawbacks. Platforms need to operate ethically, and consumers should understand how recommendations are shaping their choices.
+
+::: notes
+So overall, recommendation algorithms have become a major part of digital platforms today.
+
+All major platforms use these systems, and they have large effects on what consumers watch, buy, and interact with online.
+
+These algorithms are valuable for companies because they increase engagement and revenue.
+
+But they also come with real drawbacks, especially around privacy, bias, and consumer choice.
+
+So both companies and consumers need to be more aware of how recommendation systems shape online behavior.
+:::
+
+## Thank You
+
+<div class="thank-you">Thank you</div>
+
+Questions?
+
+::: notes
+That's all for my presentation.
+
+Thank you for listening, and I'd be happy to answer any questions!
+:::
